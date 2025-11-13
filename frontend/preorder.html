@@ -376,7 +376,7 @@ document.getElementById("preorderForm").addEventListener("submit", async e => {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/api/orders", {
+    const res = await fetch("https://<YOUR-VERCEL-URL>/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
