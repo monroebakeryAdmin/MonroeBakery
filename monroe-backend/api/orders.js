@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 import Order from "../models/Order.js";
 
-let conn = null;
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
@@ -12,17 +10,28 @@ export default async function handler(req, res) {
   try {
     const { name, email, phone, items, dateNeeded, message } = req.body;
 
-    if (!name || !email || !phone || !items || !dateNeeded)
+    if (!name || !email || !phone || !items || !dateNeeded) {
       return res.status(400).json({ message: "Missing required fields." });
+    }
 
-    // Connect to Mongo (only once)
-    if (!conn) conn = await mongoose.connect(process.env.MONGO_URI);
+    // ---- CONNECT TO MONGO (Vercel-safe way) ----
+    if (mongoose.connection.readyState === 0) {
+      await mongoose.connect(process.env.MONGO_URI);
+    }
 
-    // Save order
-    const newOrder = new Order({ name, email, phone, items, dateNeeded, message });
+    // ---- SAVE ORDER ----
+    const newOrder = new Order({
+      name,
+      email,
+      phone,
+      items,
+      dateNeeded,
+      message
+    });
+
     await newOrder.save();
 
-    // Email transporter
+    // ---- EMAIL TRANSPORTER ----
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
@@ -33,7 +42,7 @@ export default async function handler(req, res) {
       }
     });
 
-    // Email to bakery
+    // ---- SEND EMAIL TO BAKERY ----
     await transporter.sendMail({
       from: process.env.BUSINESS_EMAIL,
       to: process.env.BUSINESS_EMAIL,
@@ -49,24 +58,26 @@ export default async function handler(req, res) {
       `
     });
 
-    // SMS ALERT (via email-to-SMS)
+    // ---- SMS ALERT VIA EMAIL GATEWAY ----
     const smsRecipients = [
       "734XXXXXXX@vtext.com",
       "313XXXXXXX@tmomail.net",
       "248XXXXXXX@tmomail.net"
     ];
 
-    transporter.sendMail({
-      from: process.env.BUSINESS_EMAIL,
-      to: smsRecipients,
-      subject: "",
-      text: `📦 New bakery order from ${name}! Check your email.`
-    }).catch(() => null);
+    transporter
+      .sendMail({
+        from: process.env.BUSINESS_EMAIL,
+        to: smsRecipients,
+        subject: "",
+        text: `📦 New bakery order from ${name}! Check your bakery email.`
+      })
+      .catch(() => null);
 
     return res.status(200).json({ message: "Order received!" });
 
   } catch (error) {
-    console.error(error);
+    console.error("❌ API ERROR:", error);
     return res.status(500).json({ message: "Server error" });
   }
 }
