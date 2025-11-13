@@ -1,0 +1,11 @@
+# ignore environment files
+.env
+backend/.env
+
+# ignore node modules
+node_modules/
+
+# ignore build and cache files
+dist/
+build/
+.DS_Store

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-Order - Monroe Bakery</title>
+  <link rel="icon" type="image/png" href="Real.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="menustyles.css" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    html, body { height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: #fffaf6;
+    }
+    main { flex: 1; }
+    footer { margin-top: auto; }
+
+    /* Layout & Style */
+    #itemList h6 {
+      border-bottom: 1px solid #e4d9d9;
+      padding-bottom: 4px;
+      margin-top: 1rem;
+      color: #b21f1f;
+      font-weight: 600;
+    }
+    .item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border: 1px solid #e0d6d6;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      transition: all 0.2s ease;
+    }
+    .item-row:hover { background: #fff2f2; border-color: #b21f1f; }
+    .item-name { font-weight: 500; color: #333; }
+    .variant-select { width: 160px; }
+    .add-btn {
+      background: #b21f1f;
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+    .add-btn:hover { background: #941919; }
+
+    #itemList {
+      max-height: 700px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #cartPanel {
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      min-height: 300px;
+      max-height: 700px;
+      overflow-y: auto;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff7f7;
+      border: 1px solid #f0caca;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+    }
+    .cart-item span { font-weight: 500; color: #333; }
+    .qty-btn { width: 28px; height: 28px; padding: 0; font-weight: bold; }
+
+    #searchBar {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top fade-in-up">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Monroe Bakery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active" href="preorder.html">Pre-Order</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="container my-5 fade-in-up">
+    <h2 class="text-center mb-4">Place Your Pre-Order</h2>
+    <p>We’re happy to take pre-orders for cakes, cookies, breads, and more! Fill out the form below to let us know what you’d like and when you need it.</p>
+    <p>Please place all pre-orders at least <strong>one day in advance</strong> and no more than <strong>three weeks ahead</strong>.</p>
+
+    <div class="text-center mt-5">
+      <form id="preorderForm" class="mx-auto" style="max-width:1200px;">
+        <div class="row g-4">
+          <!-- Items -->
+          <div class="col-lg-8">
+            <label class="form-label fs-5">Select Items</label>
+            <input id="searchBar" type="text" placeholder="Search items..." class="form-control">
+            <div id="itemList" class="border rounded bg-white"></div>
+          </div>
+
+          <!-- Cart -->
+          <div class="col-lg-4">
+            <label class="form-label fs-5">Your Order <span id="cartCount" class="badge bg-danger ms-2">0</span></label>
+            <div id="cartPanel" class="rounded p-3">
+              <p class="text-muted text-center my-5">Click items on the left to add them here.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 text-start">
+          <div class="mb-3">
+            <label class="form-label">Special Requests or Cake Details</label>
+            <textarea class="form-control" id="message" placeholder="If ordering a cake, please specify flavor, size, design, or any custom requests."></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Date Needed</label>
+            <input type="date" class="form-control" id="dateNeeded" required />
+            <small class="text-muted">Orders must be between 1–21 days from today.</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="3135551234" pattern="[0-9]{10}" required />
+            <small class="text-muted">10 digits only, no spaces or dashes.</small>
+          </div>
+
+
+          <button type="submit" class="btn btn-danger w-100 py-2 fs-5">Submit Pre-Order</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark text-white py-4 fade-in-up">
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2025 Monroe Bakery. All Rights Reserved.</p>
+    <p class="small">2611 Monroe St, Dearborn, MI 48124</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* ----------------------- DATA ----------------------- */
+const allItems = [
+  { group: "🥐 Pastries", items: [
+    { name: "Danish", variants: ["Cheese","Apple","Cherry","Blueberry"] },
+    { name: "Pecan Croissant" }, { name: "Cheese Croissant" },
+    { name: "Cream Horn" }, { name: "Strudel", variants: ["Apple","Cherry"] },
+    { name: "Twist", variants: ["Raspberry","Apricot"] },
+    { name: "Pie", variants: ["Apple","Cherry"] },
+    { name: "Turnover", variants: ["Apple","Cherry"] }
+  ]},
+  { group: "🍰 Cakes & Desserts", items: [
+    { name: "Marble Cake" }, { name: "Vanilla Cake" }, { name: "Chocolate Cake" },
+    { name: "Red Velvet Cake" }, { name: "Pound Cake", variants: ["Chocolate Chip","Cherry","Plain"] },
+    { name: "Cream Cake", variants: ["Lemon","Chocolate Strawberry","Custard"] },
+    { name: "Cupcakes", variants: ["Vanilla","Chocolate","Oreo","Cherry","German Chocolate","Dubai Chocolate"] },
+    { name: "Truffles", variants: ["Key Lime","Chocolate","Strawberry"] },
+    { name: "Eclairs", variants: ["Small","Large"] },
+    { name: "Cannolis" }, { name: "Tiramisu" }, { name: "Cheesecake" }
+  ]},
+  { group: "🍪 Cookies & Treats", items: [
+    { name: "Brownies", variants: ["Nuts","No Nuts"] },
+    { name: "Tea Ring", variants: ["Poppy Seed","Walnut"] },
+    { name: "Nut Roll", variants: ["Poppy Seed","Walnut"] },
+    { name: "Classic Cookies", variants: ["Chocolate Chip","M&M","Oatmeal Raisin","Peanut Butter"] },
+    { name: "Soft Butter Cookies", variants: ["Chocolate Chip","Chocolate Sprinkle","Rainbow Sprinkle","Raspberry Dip"] }
+  ]},
+  { group: "🍞 Bread & Rolls", items: [
+    { name: "Classic Bread", variants: ["French","Sesame","White (Square)","Poppy Seed","Pumpernickel","Marble Rye","Caraway Rye","Potato Bread", "Sourdough Rye", "Whole Wheat","Health (7-Grain)"] },
+    { name: "Specialty Bread", variants: ["Egg Bread","Cinnamon Raisin Bread"] },
+    { name: "Banana Bread", variants: ["Small","Medium","Large"] },
+    { name: "Zucchini Bread", variants: ["Small","Medium","Large"] },
+    { name: "Rolls", variants: ["Double Dinner Rolls","Plain", "Sesame", "Poppy Seed", "Onion", "Sub Buns", "Hot Dog Buns", "Butterflake Rolls"] }
+  ]}
+];
+
+const itemListEl = document.getElementById('itemList');
+const cartPanel = document.getElementById('cartPanel');
+const cartCount = document.getElementById('cartCount');
+let cart = {};
+
+/* ------------------ RENDER MENU ------------------ */
+function renderMenu(filter = "") {
+  itemListEl.innerHTML = "";
+  allItems.forEach(group => {
+    const filteredItems = group.items.filter(item => {
+      const inName = item.name.toLowerCase().includes(filter);
+      const inVariant = item.variants?.some(v => v.toLowerCase().includes(filter));
+      return inName || inVariant;
+    });
+    if (filteredItems.length === 0) return;
+
+    const h = document.createElement("h6");
+    h.textContent = group.group;
+    itemListEl.appendChild(h);
+
+    filteredItems.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "item-row";
+
+      const nameSpan = document.createElement("span");
+      nameSpan.className = "item-name";
+      nameSpan.textContent = item.name;
+
+      let control;
+      if (item.variants) {
+        const select = document.createElement("select");
+        select.className = "form-select form-select-sm variant-select";
+        item.variants.forEach(v => {
+          const opt = document.createElement("option");
+          opt.value = v;
+          opt.textContent = v;
+          select.appendChild(opt);
+        });
+        const addBtn = document.createElement("button");
+        addBtn.type = "button";
+        addBtn.className = "add-btn";
+        addBtn.textContent = "Add";
+        addBtn.onclick = e => { e.preventDefault(); addToCart(item.name, select.value); };
+        const controlDiv = document.createElement("div");
+        controlDiv.className = "d-flex gap-2";
+        controlDiv.append(select, addBtn);
+        control = controlDiv;
+      } else {
+        const addBtn = document.createElement("button");
+        addBtn.type = "button";
+        addBtn.className = "add-btn";
+        addBtn.textContent = "Add";
+        addBtn.onclick = e => { e.preventDefault(); addToCart(item.name); };
+        control = addBtn;
+      }
+
+      row.append(nameSpan, control);
+      itemListEl.appendChild(row);
+    });
+  });
+}
+renderMenu();
+
+/* ------------------ SEARCH ------------------ */
+document.getElementById("searchBar").addEventListener("input", e => {
+  renderMenu(e.target.value.toLowerCase());
+});
+
+/* ------------------ CART ------------------ */
+function addToCart(name, variant = null) {
+  const key = variant ? `${name} (${variant})` : name;
+  cart[key] = (cart[key] || 0) + 1;
+  renderCart();
+}
+function changeQty(key, delta) {
+  cart[key] = Math.max(1, (cart[key] || 1) + delta);
+  renderCart();
+}
+function renderCart() {
+  cartPanel.innerHTML = "";
+  const entries = Object.entries(cart);
+  cartCount.textContent = entries.length;
+  if (entries.length === 0) {
+    cartPanel.innerHTML = '<p class="text-muted text-center my-5">Click items on the left to add them here.</p>';
+    return;
+  }
+  entries.forEach(([key, qty]) => {
+    const row = document.createElement("div");
+    row.className = "cart-item";
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = key;
+    const controls = document.createElement("div");
+    controls.className = "d-flex align-items-center gap-1";
+    const minus = document.createElement("button");
+    minus.className = "btn btn-outline-secondary btn-sm qty-btn";
+    minus.textContent = "−";
+    minus.onclick = () => changeQty(key, -1);
+    const qtySpan = document.createElement("span");
+    qtySpan.textContent = qty;
+    qtySpan.className = "px-2";
+    const plus = document.createElement("button");
+    plus.className = "btn btn-outline-secondary btn-sm qty-btn";
+    plus.textContent = "+";
+    plus.onclick = () => changeQty(key, 1);
+    const remove = document.createElement("button");
+    remove.className = "btn btn-outline-danger btn-sm ms-2";
+    remove.innerHTML = "&times;";
+    remove.onclick = () => { delete cart[key]; renderCart(); };
+    controls.append(minus, qtySpan, plus, remove);
+    row.append(nameSpan, controls);
+    cartPanel.appendChild(row);
+  });
+}
+
+/* ------------------ DATE VALIDATION ------------------ */
+const dateField = document.getElementById("dateNeeded");
+const today = new Date();
+const tomorrow = new Date(today);
+tomorrow.setDate(today.getDate() + 1);
+const maxDate = new Date(today);
+maxDate.setDate(today.getDate() + 21);
+dateField.min = tomorrow.toISOString().split("T")[0];
+dateField.max = maxDate.toISOString().split("T")[0];
+
+/* ------------------ FORM SUBMIT ------------------ */
+let lastOrderTime = 0; // Track last submission time
+
+document.getElementById("preorderForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  const now = Date.now();
+  if (now - lastOrderTime < 60000) {
+    alert("Please wait a minute before submitting another order.");
+    return;
+  }
+
+  const phoneVal = document.getElementById("phone").value.trim();
+  if (!/^[0-9]{10}$/.test(phoneVal)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+
+  const dateNeeded = new Date(dateField.value);
+  if (dateNeeded < tomorrow || dateNeeded > maxDate) {
+    alert("Date must be between 1 and 21 days from today.");
+    return;
+  }
+
+  const items = Object.entries(cart).map(([k, q]) => `${k} ×${q}`).join(", ") || "(none)";
+  const data = {
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    phone: phoneVal,
+    items,
+    dateNeeded: dateField.value,
+    message: document.getElementById("message").value.trim()
+  };
+
+  try {
+    const res = await fetch("http://localhost:5000/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    Swal.fire({
+      title: "Thank You for Your Order! 🎉",
+      text: "We’ve received your pre-order and will confirm details soon via email or text.",
+      icon: "success",
+      confirmButtonColor: "#b21f1f"
+    });
+
+    lastOrderTime = Date.now();
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+
+  cart = {};
+  renderCart();
+  e.target.reset();
+});
+
+</script>
+</body>
+</html>

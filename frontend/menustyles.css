@@ -1,0 +1,388 @@
+/* General Styles */
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 100%;
+    color: #000;
+    margin: 0;
+    background-color: #fffaf6;
+    background-image: url("ricepaper_v3.webp"); /* Optional: add a subtle image */
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+
+
+/*Sticky Footer Styles*/
+/* Sticky footer layout fix */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Playfair display */
+header h1, section h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #f4c542; /* Yellow/gold */
+    padding: 2em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #b21f1f; /* Deep red for title */
+    margin-bottom: 0.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #000000; /* Black for subtitle */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #b21f1f !important; /* Monroe Bakery red */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft depth */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #f4c542 !important; /* Bakery gold on hover */
+}
+
+.navbar .active {
+    font-weight: bold;
+    color: #f4c542 !important;
+}
+
+/*Page header coloring*/
+.custom-header {
+    background-color: #ffffff; /* Match section bg */
+    border-bottom: 1px solid #ccc; /* Optional: soft border */
+}
+
+
+
+/* Section Styles */
+section {
+    padding: 2em 1em;
+    margin: 1em auto;
+    max-width: 900px;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+section h2 {
+    font-size: 2em;
+    color: #b21f1f; /* Red section headings */
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+section p, ul {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+/* Call-to-Action Button */
+.btn-primary, .btn-success {
+    background-color: #b21f1f;
+    border: none;
+    color: #ffffff;
+    padding: 0.5em 1em;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background-color: #8c1919; /* Slightly darker red */
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+
+/* Footer */
+footer {
+    background-color: #b21f1f;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Gallery Carousel */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+.carousel-caption p {
+    font-size: 1em;
+    color: #f4f4f4;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form .form-label {
+    font-weight: bold;
+}
+
+form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form .btn-primary {
+    background-color: #b21f1f;
+    border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 1.5em 1em;
+    }
+
+    .carousel img {
+        height: 300px;
+    }
+}
+
+
+
+/* Homepage gallery */
+.photo-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.photo-row img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-row img:hover {
+    transform: scale(1.05);
+}
+/* Homepage gallery end */
+
+
+
+
+
+
+/*Main header for home page*/
+.hero-banner {
+    background-color: #ffffff; /* or you can try #fff3e6 (Creamy white) */
+    padding: 3rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #b21f1f; /* Bakery red */
+    margin-bottom: 0.5rem;
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    color: #6c4c3f; /* Warm brown for subtext */
+}
+
+
+
+
+/*News Page header styling*/
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* Or tweak based on your layout */
+    object-fit: contain; /* Keeps full image visible without cropping */
+    background-color: #fff; /* Optional: fills in empty space with white */
+    padding: 1rem; /* Optional: adds space around image */
+  }
+  
+
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+    color: #f4f4f4;
+  }
+  
+
+
+/*Menu Image shadow hover*/
+.bg-light:hover {
+    background-color: #fffaf4;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    /* transform removed */
+}
+
+
+  
+
+
+/*Gallery Image shadow hover*/
+img.shadow-sm:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+
+/*Menu image size*/
+.menu-img-thumb {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+    background-color: white; /* optional if image doesn’t fully fill */
+    border-radius: 10px;
+    margin: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease-in-out;
+}
+
+  
+  .menu-img-thumb:hover {
+    transform: scale(1.05);
+  }
+
+  
+  .menu-image-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* Make carousel control arrows black */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* flips Bootstrap's white icon to black */
+}
+
+/* Optional: add a light background circle so they’re always visible */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Ensure hamburger icon is visible on red navbar */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Force white text just for the gallery hero */
+header.hero h1,
+header.hero p {
+  color: #ffffff !important;   /* pure white */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* heavy shadow for visibility */
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 1s ease-out both;
+}
+
+/* ----- Cart item styling ----- */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+.cart-item:last-child { border-bottom: none; }
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+}
+.item-btn {
+  cursor: pointer;
+  user-select: none;
+}
+.item-btn:hover { background-color: #f8f9fa; }
