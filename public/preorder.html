@@ -184,38 +184,118 @@
 <script>
 /* ----------------------- DATA ----------------------- */
 const allItems = [
-  { group: "🥐 Pastries", items: [
-    { name: "Danish", variants: ["Cheese","Apple","Cherry","Blueberry"] },
-    { name: "Pecan Croissant" }, { name: "Cheese Croissant" },
-    { name: "Cream Horn" }, { name: "Strudel", variants: ["Apple","Cherry"] },
-    { name: "Twist", variants: ["Raspberry","Apricot"] },
-    { name: "Pie", variants: ["Apple","Cherry"] },
-    { name: "Turnover", variants: ["Apple","Cherry"] }
-  ]},
-  { group: "🍰 Cakes & Desserts", items: [
-    { name: "Marble Cake" }, { name: "Vanilla Cake" }, { name: "Chocolate Cake" },
-    { name: "Red Velvet Cake" }, { name: "Pound Cake", variants: ["Chocolate Chip","Cherry","Plain"] },
-    { name: "Cream Cake", variants: ["Lemon","Chocolate Strawberry","Custard"] },
-    { name: "Cupcakes", variants: ["Vanilla","Chocolate","Oreo","Cherry","German Chocolate","Dubai Chocolate"] },
-    { name: "Truffles", variants: ["Key Lime","Chocolate","Strawberry"] },
-    { name: "Eclairs", variants: ["Small","Large"] },
-    { name: "Cannolis" }, { name: "Tiramisu" }, { name: "Cheesecake" }
-  ]},
-  { group: "🍪 Cookies & Treats", items: [
-    { name: "Brownies", variants: ["Nuts","No Nuts"] },
-    { name: "Tea Ring", variants: ["Poppy Seed","Walnut"] },
-    { name: "Nut Roll", variants: ["Poppy Seed","Walnut"] },
-    { name: "Classic Cookies", variants: ["Chocolate Chip","M&M","Oatmeal Raisin","Peanut Butter"] },
-    { name: "Soft Butter Cookies", variants: ["Chocolate Chip","Chocolate Sprinkle","Rainbow Sprinkle","Raspberry Dip"] }
-  ]},
-  { group: "🍞 Bread & Rolls", items: [
-    { name: "Classic Bread", variants: ["French","Sesame","White (Square)","Poppy Seed","Pumpernickel","Marble Rye","Caraway Rye","Potato Bread", "Sourdough Rye", "Whole Wheat","Health (7-Grain)"] },
-    { name: "Specialty Bread", variants: ["Egg Bread","Cinnamon Raisin Bread"] },
-    { name: "Banana Bread", variants: ["Small","Medium","Large"] },
-    { name: "Zucchini Bread", variants: ["Small","Medium","Large"] },
-    { name: "Rolls", variants: ["Double Dinner Rolls","Plain", "Sesame", "Poppy Seed", "Onion", "Sub Buns", "Hot Dog Buns", "Butterflake Rolls"] }
-  ]}
+  {
+    group: "🥐 Pastries",
+    items: [
+      { name: "Pecan Croissant" },
+      { name: "Cheese Croissant" },
+      { name: "Danish", variants: ["Cheese","Apple","Cherry","Blueberry"] },
+      { name: "Cream Horn" },
+      { name: "Twist", variants: ["Raspberry","Apricot"] },
+      { name: "Bear Claw" },
+      { name: "Almond Pretzel" },
+      { name: "Pie", variants: ["Apple (Mini)","Apple (Large)","Cherry (Mini)","Cherry (Large)"] },
+      { name: "Strudel", variants: ["Apple (Small)","Apple (Large)","Cherry (Small)","Cherry (Large)"] },
+      { name: "Turnover", variants: ["Apple","Cherry"] },
+      { name: "Indian Pie" }
+    ]
+  },
+
+  {
+    group: "🍧 Fridge Desserts",
+    items: [
+      { name: "Cupcake", variants: ["Vanilla","Chocolate","Peanut","Oreo","Cherry","German Chocolate","Dubai Chocolate"] },
+      { name: "Cannoli", variants: ["Peanut Sprinkle","Chocolate Sprinkle"] },
+      { name: "Tiramisu Slice" },
+      { name: "Lemon Bomb Cake" },
+      { name: "Chocolate Bomb Cake" },
+      { name: "Key Lime Bomb Cake" },
+      { name: "Eclair", variants: ["Small","Large"] },
+      { name: "Bakery Cheesecake" },
+      { name: "Cheesecake Factory Slice" },
+      { name: "Napoleon" },
+      { name: "Boston Cream Pie" }
+    ]
+  },
+
+  {
+    group: "🍕 Savory Treats",
+    items: [
+      { name: "Spinach Bistro" },
+      { name: "Leek Bistro" },
+      { name: "Breakfast Croissant (Bacon, Egg, Cheese)" },
+      { name: "Spinach Pie" },
+      { name: "Chicken Pastie" },
+      { name: "Beef Pastie" },
+      { name: "Pepperoni Roll" }
+    ]
+  },
+
+  {
+    group: "🍞 Bread & Rolls",
+    items: [
+      { name: "Fresh Bread", variants: ["French","Sesame","White (Square)","Poppy Seed","Pumpernickel","Marble Rye","Caraway Rye","Potato Bread","Whole Wheat","Health 7-Grain"] },
+      { name: "Cinnamon Bread" },
+      { name: "Egg Bread", variants: ["Plain","With Raisin"] },
+      { name: "Sourdough Rye" },
+      { name: "Banana Bread", variants: ["Small","Medium","Large"] },
+      { name: "Zucchini Bread", variants: ["Small","Medium","Large"] },
+      { name: "Round Blessing Bread", variants: ["½ lb","1 lb","2 lb"] },
+      { name: "Raw Blessing Bread", variants: ["½ lb","1 lb","2 lb"] },
+      { name: "Sub Roll" },
+      { name: "Rolls", variants: ["Regular","Seed","Potato","Onion"] },
+      { name: "Butterflake Rolls" },
+      { name: "Hot Dog Buns" }
+    ]
+  },
+
+  {
+    group: "🎂 Cakes",
+    items: [
+      { name: "Custom Layer Cake (7\")", variants: ["No Decoration","Flower Decoration","Special Decoration"] },
+      { name: "Marble Cake" },
+      { name: "Vanilla Cake" },
+      { name: "Chocolate Cake" },
+      { name: "Carrot Cake" },
+      { name: "Red Velvet Cake" },
+      { name: "Seasonal Decorated Cake" },
+      { name: "Cream Cake", variants: ["Blueberry","Custard","Lemon","Chocolate Strawberry","Pistachio"] },
+      { name: "Pound Cake", variants: ["Marble","Lemon","Vanilla"] }
+    ]
+  },
+
+  {
+    group: "🍪 Cookies & Treats",
+    items: [
+      { name: "Chocolate Chip Cookies (lb)" },
+      { name: "Sugar Cookie" },
+      { name: "M&M Cookies (lb)" },
+      { name: "Peanut Butter Cookies (lb)" },
+      { name: "Oatmeal Cookies", variants: ["Raisin","Date","Apricot","Raspberry"] },
+      { name: "Frosting Sandwich Cookies (lb)" },
+      { name: "Soft Butter Cookies (lb)" },
+      { name: "Nut Roll", variants: ["Poppy Seed","Walnut"] },
+      { name: "Tea Ring", variants: ["Poppy Seed","Walnut"] },
+      { name: "Brownie", variants: ["Nuts","No Nuts"] },
+
+      /* 🎄 ADD YOUR HOLIDAY SPECIALS */
+      { name: "Cookie Tray", variants: ["Small","Large"] },
+      { name: "Cookie Tin", variants: ["Small","Large"] }
+    ]
+  },
+
+  {
+    group: "🍩 Donuts",
+    items: [
+      { name: "Donut", variants: ["Single","½ Dozen","Dozen"] },
+      { name: "Custard Donut" },
+      { name: "Raspberry Donut" },
+      { name: "Long John" },
+      { name: "Eclair" }
+    ]
+  }
 ];
+
 
 const itemListEl = document.getElementById('itemList');
 const cartPanel = document.getElementById('cartPanel');
