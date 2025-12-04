@@ -142,25 +142,28 @@
       <!-- Left Column -->
       <div class="col-md-6">
         <div class="p-4 rounded-4 shadow-sm" style="background: #fff9f9; border: 1px solid #f3dede;">
-          <h4 class="text-danger mb-3">📰 What’s New?</h4>
+          <h4 class="text-danger mb-3">❄️ What’s New?</h4>
 
           <p class="mb-3" style="font-size: 1.05rem;">
-            We’re taking orders now for <strong>Thanksgiving!</strong> 🦃  
-            Our <span style="color:#b21f1f; font-weight:600;">Pumpkin Pies</span>, 
-            <span style="color:#b21f1f; font-weight:600;">Pumpkin Squares</span>, and 
-            <span style="color:#b21f1f; font-weight:600;">Sweet Potato Pies</span> are 
-            <strong>BACK for the season!</strong> 🥧🍂
-          </p>
+  We’re taking orders now for <strong>Christmas!</strong> 🎄  
+  Our <span style="color:#b21f1f; font-weight:600;">Cookie Trays</span>, 
+  <span style="color:#b21f1f; font-weight:600;">Cookie Tins</span>, and 
+  <span style="color:#b21f1f; font-weight:600;">Holiday Desserts</span> are 
+  <strong>BACK for the season!</strong> 🎅❄️
+</p>
 
           <div class="mt-3">
-            <h5 class="text-danger">🗓 Thanksgiving Schedule</h5>
-            <p class="mb-0" style="font-size: 1.05rem;">
-              We’ll be <strong>closed November 27th – 30th</strong> for the Thanksgiving holiday —  
-              please make sure to place your orders early!
-            </p>
+            <h4 class="text-danger mb-3">🍪 Cookie Tray & Tin Prices</h4>
+            <p class="mb-0" style="font-size: 1.1rem; line-height: 1.65;">
+  <strong>Small Cookie Tin:</strong> $6.99<br>
+  <strong>Large Cookie Tin:</strong> $16.99<br>
+  <strong>Small Cookie Tray:</strong> $36.99<br>
+  <strong>Large Cookie Tray:</strong> $46.99
+</p>
           </div>
         </div>
       </div>
+
 
       <!-- Right Column -->
       <div class="col-md-6">
@@ -185,46 +188,71 @@
     </div>
   </section>
 
-  <!-- Carousel -->
-  <div class="carousel slide carousel-fade my-5 fade-in-up" data-bs-ride="carousel" id="easterCarousel">
-    <div class="carousel-inner">
+<!-- Carousel -->
+<style>
+  /* Size and position of the arrow buttons */
+  #easterCarousel .carousel-control-prev,
+  #easterCarousel .carousel-control-next {
+    width: 8%;
+  }
 
-      <div class="carousel-item active bg-light d-flex align-items-center justify-content-center" style="height:400px;">
-        <div class="text-center">
-          <h5 class="text-success">🍎 Apple Cider Donuts!</h5>
-          <p class="text-dark">Fresh Apple Cider Donuts are back! 🍩 Warm, spiced, and perfect for fall.</p>
-        </div>
-      </div>
+  /* Our custom arrows (no spans needed) */
+  #easterCarousel .carousel-control-prev::before,
+  #easterCarousel .carousel-control-next::before {
+    content: '‹';
+    font-size: 3rem;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-      <div class="carousel-item bg-light d-flex align-items-center justify-content-center" style="height:400px;">
-        <div class="text-center">
-          <h5 class="text-danger">🛒 Order Online!</h5>
-          <p class="text-dark">Skip the wait — pre-order your favorite treats today through our website or Google!</p>
-        </div>
-      </div>
+  #easterCarousel .carousel-control-next::before {
+    content: '›';
+  }
+</style>
 
-      <div class="carousel-item bg-light d-flex align-items-center justify-content-center" style="height:400px;">
-        <div class="text-center">
-          <h5 class="text-danger">🎃 Pumpkin Spice Donuts!</h5>
-          <p class="text-dark">Pumpkin Spice Donuts are back! 🍩🍂 Soft, sweet, and filled with cozy fall flavor.</p>
-        </div>
-      </div>
+<div class="carousel slide carousel-fade my-5 fade-in-up" data-bs-ride="carousel" id="easterCarousel">
+  <div class="carousel-inner">
 
+    <!-- Slide 1: cookie tray -->
+    <div class="carousel-item active" style="height:450px;">
+      <img
+        src="images/cookietray.jpg"
+        class="d-block mx-auto"
+        style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
+        alt="Cookie Tray"
+      />
     </div>
 
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#easterCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
+    <!-- Slide 2: round cookie tray -->
+    <div class="carousel-item" style="height:450px;">
+      <img
+        src="images/cook.jpg"
+        class="d-block mx-auto"
+        style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
+        alt="Holiday Cookie Tray"
+      />
+    </div>
 
-    <button class="carousel-control-next" type="button" data-bs-target="#easterCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <!-- Slide 3: pre-order text -->
+    <div class="carousel-item bg-light d-flex align-items-center justify-content-center" style="height:450px; border-radius: 15px;">
+      <div class="text-center">
+        <h5 class="text-danger">🛒 Order Online!</h5>
+        <p class="text-dark">Skip the wait — pre-order your favorite treats today through our website or Google!</p>
+      </div>
+    </div>
+
   </div>
 
+  <!-- Carousel Controls (no span icons, arrows come from CSS ::before) -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#easterCarousel" data-bs-slide="prev"></button>
+  <button class="carousel-control-next" type="button" data-bs-target="#easterCarousel" data-bs-slide="next"></button>
+</div>
+
+
 </main>
+
 
 <!-- Footer -->
 <footer class="bg-dark text-white py-4 mt-5 fade-in-up">
