@@ -234,10 +234,10 @@ const allItems = [
   {
     group: "🍞 Bread & Rolls",
     items: [
-      { name: "Fresh Bread", variants: ["French","Sesame","White (Square)","Poppy Seed",","Potato Bread"] },
+      { name: "Fresh Bread", variants: ["French","Sesame","White (Square)","Poppy Seed","Potato Bread",] },
       { name: "Cinnamon Bread" },
       { name: "Egg Bread", variants: ["Plain","With Raisin"] },
-      { name: "Rye Bread", variants: ["Pumpernickel","Marble Rye","Caraway Rye","Whole Wheat","Health 7-Grain"] },
+      { name: "Rye Bread", variants: ["Sourdough Rye Bread","Pumpernickel","Marble Rye","Caraway Rye","Whole Wheat","Health 7-Grain"] },
       { name: "Banana Bread", variants: ["Small","Medium","Large"] },
       { name: "Zucchini Bread", variants: ["Small","Medium","Large"] },
       { name: "Round Blessing Bread", variants: ["½ lb","1 lb","2 lb"] },
@@ -266,13 +266,17 @@ const allItems = [
   {
     group: "🍪 Cookies & Treats",
     items: [
-      { name: "Chocolate Chip Cookies (lb)" },
+      { name: "Chocolate Chip Cookies" },
       { name: "Sugar Cookie" },
-      { name: "M&M Cookies (lb)" },
-      { name: "Peanut Butter Cookies (lb)" },
+      { name: "M&M Cookies" },
+      { name: "Peanut Butter Cookies" },
       { name: "Oatmeal Cookies", variants: ["Raisin","Date","Apricot","Raspberry"] },
-      { name: "Frosting Sandwich Cookies (lb)" },
-      { name: "Soft Butter Cookies (lb)" },
+      { name: "Frosting Sandwich Cookies" },
+{ 
+  name: "Soft Butter Cookies (lb)",
+  variants: ["Chocolate Chip", "Sprinkle", "Raspberry Drop", "Chocolate Sprinkle"]
+},
+
       { name: "Nut Roll", variants: ["Poppy Seed","Walnut"] },
       { name: "Tea Ring", variants: ["Poppy Seed","Walnut"] },
       { name: "Brownie", variants: ["Nuts","No Nuts"] },
@@ -286,11 +290,28 @@ const allItems = [
   {
     group: "🍩 Donuts",
     items: [
-      { name: "Donut", variants: ["Single","½ Dozen","Dozen"] },
-      { name: "Custard Donut" },
-      { name: "Raspberry Donut" },
+{ 
+  name: "Donut",
+  variants: [
+    "Regular Glaze",
+    "Chocolate Glaze",
+    "Cinnamon Roll",
+    "Glazed Twist Donut",
+    "Plain Fry Cake",
+    "Chocolate Fry Cake",
+    "Sprinkle Fry Cake",
+    "Peanut Fry Cake",
+    "Cinnamon Fry Cake"
+    "Apple Fritter",
+    "Apple Cinnamon",
+    "Pumpkin Spice"
+  ]
+},
+
+      { name: "Custard Filled Donut" },
+      { name: "Raspberry Filled Donut" },
       { name: "Long John" },
-      { name: "Eclair" }
+      { name: "Long Eclair" }
     ]
   }
 ];
