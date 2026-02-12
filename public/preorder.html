@@ -501,28 +501,39 @@ document.getElementById("preorderForm").addEventListener("submit", async e => {
   };
 
   try {
-    const res = await fetch("/api/orders", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-    const json = await res.json();
-    Swal.fire({
-      title: "Thank You for Your Order! 🎉",
-      text: "We’ve received your pre-order and will confirm details soon via email or text.",
-      icon: "success",
-      confirmButtonColor: "#b21f1f"
-    });
+  const res = await fetch("/api/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
 
-    lastOrderTime = Date.now();
-  } catch (err) {
-    alert("Error: " + err.message);
+  const text = await res.text(); // read whatever came back
+  let json = null;
+  try { json = text ? JSON.parse(text) : null; } catch (_) {}
+
+  if (!res.ok) {
+    throw new Error(json?.message || text || `Request failed (${res.status})`);
   }
 
+  Swal.fire({
+    title: "Thank You for Your Order! 🎉",
+    text: "We’ve received your pre-order and will confirm details soon via email or text.",
+    icon: "success",
+    confirmButtonColor: "#b21f1f"
+  });
+
+  lastOrderTime = Date.now();
+
+  // ✅ only clear after success
   cart = {};
   renderCart();
   e.target.reset();
-});
+
+} catch (err) {
+  alert("Error: " + err.message);
+  return; // ✅ don’t wipe cart on failure
+}
+);
 
 </script>
 </body>
