@@ -11,20 +11,20 @@
   <link href="/menustyles.css" rel="stylesheet" />
 
   <style>
-    /* Fade animation */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     .fade-in-up {
       animation: fadeInUp 1s ease-out both;
     }
 
-    /* Navbar styling (matches homepage/menu) */
     .navbar {
       background-color: #b21f1f !important;
       z-index: 1050;
     }
+
     .navbar-brand {
       font-weight: bold;
       color: #fff !important;
@@ -38,15 +38,16 @@
       padding: 6px 10px;
       transition: background 0.3s ease;
     }
+
     .navbar-toggler:hover {
       background: rgba(255,255,255,0.25);
     }
+
     .navbar-toggler:focus {
       box-shadow: none;
       outline: none;
     }
 
-    /* ✅ White hamburger icon inside rounded translucent box */
     .navbar-toggler-icon {
       width: 1.4em;
       height: 1.4em;
@@ -57,25 +58,28 @@
     .navbar-nav .nav-link {
       color: #fff !important;
     }
+
     .navbar-nav .nav-link.active {
       font-weight: bold;
       text-decoration: underline;
     }
 
-    /* Carousel Arrow Fix (Responsive) */
     .carousel-control-prev, 
     .carousel-control-next {
       width: 8%;
     }
+
     @media (min-width: 768px) {
       .carousel-control-prev { left: -40px; }
       .carousel-control-next { right: -40px; }
     }
+
     @media (max-width: 767px) {
       .carousel-control-prev,
       .carousel-control-next {
         width: 5%;
       }
+
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
         background-size: 1.5rem 1.5rem;
@@ -87,6 +91,7 @@
       text-decoration: none;
       font-weight: 500;
     }
+
     a:hover {
       color: #8c1919;
       text-decoration: underline;
@@ -96,7 +101,6 @@
 
 <body>
 
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
   <div class="container">
     <a class="navbar-brand" href="/index.html">Monroe Bakery</a>
@@ -119,171 +123,136 @@
   </div>
 </nav>
 
-<!-- Header -->
 <header class="bg-light py-3 mb-4 fade-in-up">
   <div class="container text-center">
     <h1>Latest News</h1>
   </div>
 </header>
 
-<!-- Main Content -->
 <main class="fade-in-up">
 
-  <!-- Exciting Updates Section -->
   <section class="container my-5 fade-in-up">
     <div class="text-center mb-4">
       <h2 class="text-danger fw-bold" style="font-family: 'Playfair Display', serif;">
-        🎉 Exciting Updates at Monroe Bakery!
+        🐰 Exciting Easter Updates at Monroe Bakery!
       </h2>
-      <p class="text-muted">See what’s fresh, festive, and coming up soon 🍰</p>
+      <p class="text-muted">See what’s fresh, festive, and coming up soon 🌷🥚</p>
     </div>
 
     <div class="row g-4">
-      <!-- Left Column -->
       <div class="col-md-6">
         <div class="p-4 rounded-4 shadow-sm" style="background: #fff9f9; border: 1px solid #f3dede;">
-          <h4 class="text-danger mb-3">❄️ What’s New?</h4>
+          <h4 class="text-danger mb-3">🌸 What’s New?</h4>
 
           <p class="mb-3" style="font-size: 1.05rem;">
-  We’re taking orders now for <strong>Pączki Day!</strong> 🍩  
-  Our <span style="color:#b21f1f; font-weight:600;">Fresh Pączki</span>, 
-  <span style="color:#b21f1f; font-weight:600;">Classic Fillings</span>, and 
-  <span style="color:#b21f1f; font-weight:600;">Bakery Favorites</span> are 
-  <strong>BACK for the season!</strong> 🎉❄️
-</p>
-
+            We’re now taking orders for <strong>Easter!</strong> 🐣
+            Our seasonal favorites are here, including
+            <span style="color:#b21f1f; font-weight:600;">Fuzzy Bunny Cake</span>,
+            <span style="color:#b21f1f; font-weight:600;">Fuzzy Bunny Cupcakes</span>,
+            <span style="color:#b21f1f; font-weight:600;">Easter Bunny Themed Cupcakes</span>,
+            <span style="color:#b21f1f; font-weight:600;">Hot Cross Buns</span>,
+            <span style="color:#b21f1f; font-weight:600;">Small & Large Lamb Cakes</span>, and
+            <span style="color:#b21f1f; font-weight:600;">Egg Bread</span>.
+            <strong>Available now for the season!</strong> 🐰🌷
+          </p>
 
           <div class="mt-3">
-  <h4 class="text-danger mb-3">🍩 Pączki Prices</h4>
-  <p class="mb-0" style="font-size: 1.1rem; line-height: 1.65;">
-    <strong>1 Dozen Pączki:</strong> $29.99<br>
-    <strong>Half Dozen Pączki:</strong> $14.99<br>
-    <strong>Single Pączki:</strong> $2.55 each
-  </p>
-</div>
+            <h4 class="text-danger mb-3">🎨 Easter Colors</h4>
+            <p class="mb-0" style="font-size: 1.1rem; line-height: 1.65;">
+              <strong>Fuzzy Bunny Cake Colors:</strong> Blue, Yellow, Pink<br>
+              <strong>Fuzzy Bunny Cupcake Colors:</strong> Blue, Yellow, Pink<br>
+              <strong>Easter Bunny Cupcakes:</strong> Available in festive Easter styles
+            </p>
+          </div>
         </div>
       </div>
 
+      <div class="col-md-6">
+        <div class="p-4 rounded-4 shadow-sm" style="background:#fff9f9; border:1px solid #f3dede;">
+          <h4 class="text-danger mb-2 fw-bold">🐣 Easter Specials</h4>
 
-      <!-- Right Column -->
-      <!-- Right Column -->
-<div class="col-md-6">
-  <div class="p-4 rounded-4 shadow-sm" style="background:#fff9f9; border:1px solid #f3dede;">
-    
-    <h4 class="text-danger mb-2 fw-bold">🍩 Flavors</h4>
-
-    <p class="mb-3" style="font-size:1.05rem;">
-      Order ahead easily through our 
-      <a href="/preorder.html" class="fw-bold text-danger">Pre-Order</a> tab —
-      just fill out the simple form and you’re good to go!
-    </p>
-
-    <!-- Flavors -->
-    <ul class="list-unstyled row mt-3" style="font-size:1.05rem;">
-      <li class="col-6 mb-2 fw-semibold text-dark">Custard</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Chocolate</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Cannoli</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Strawberry Cheesecake</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Lemon</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Raspberry</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Strawberry</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Prune</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Cherry</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Apple</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">Blueberry</li>
-      <li class="col-6 mb-2 fw-semibold text-dark">White Frosting</li>
-    </ul>
-
-    <hr style="border-color:#f3dede;">
-
-    <!-- Contact -->
-    <ul class="list-unstyled mt-3" style="font-size:1.05rem;">
-      <li class="mb-2">
-        <i class="bi bi-telephone-fill text-danger me-2"></i>
-        <strong>Phone:</strong> (313) 561-5400
-      </li>
-      <li>
-        <i class="bi bi-geo-alt-fill text-danger me-2"></i>
-        <strong>Location:</strong> 2611 Monroe St, Dearborn, MI 48124
-      </li>
-    </ul>
-
-  </div>
-</div>
+          <p class="mb-3" style="font-size:1.05rem;">
+            Order ahead easily through our
+            <a href="/preorder.html" class="fw-bold text-danger">Pre-Order</a> tab —
+            just fill out the simple form and you’re good to go!
+          </p>
 
 
 
+          <hr style="border-color:#f3dede;">
+
+          <ul class="list-unstyled mt-3" style="font-size:1.05rem;">
+            <li class="mb-2">
+              <i class="bi bi-telephone-fill text-danger me-2"></i>
+              <strong>Phone:</strong> (313) 561-5400
+            </li>
+            <li>
+              <i class="bi bi-geo-alt-fill text-danger me-2"></i>
+              <strong>Location:</strong> 2611 Monroe St, Dearborn, MI 48124
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- Carousel -->
-<style>
-  /* Size and position of the arrow buttons */
-  #easterCarousel .carousel-control-prev,
-  #easterCarousel .carousel-control-next {
-    width: 8%;
-  }
+  <style>
+    #easterCarousel .carousel-control-prev,
+    #easterCarousel .carousel-control-next {
+      width: 8%;
+    }
 
-  /* Our custom arrows (no spans needed) */
-  #easterCarousel .carousel-control-prev::before,
-  #easterCarousel .carousel-control-next::before {
-    content: '‹';
-    font-size: 3rem;
-    color: #333;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    #easterCarousel .carousel-control-prev::before,
+    #easterCarousel .carousel-control-next::before {
+      content: '‹';
+      font-size: 3rem;
+      color: #333;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  #easterCarousel .carousel-control-next::before {
-    content: '›';
-  }
-</style>
+    #easterCarousel .carousel-control-next::before {
+      content: '›';
+    }
+  </style>
 
-<div class="carousel slide carousel-fade my-5 fade-in-up" data-bs-ride="carousel" id="easterCarousel">
-  <div class="carousel-inner">
+  <div class="carousel slide carousel-fade my-5 fade-in-up" data-bs-ride="carousel" id="easterCarousel">
+    <div class="carousel-inner">
 
-    <!-- Slide 1: cookie tray -->
-    <div class="carousel-item active" style="height:450px;">
-      <img
-        src="images/IMG_6008.JPG"
-        class="d-block mx-auto"
-        style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
-        alt="Cookie Tray"
-      />
-    </div>
-
-    <!-- Slide 2: round cookie tray -->
-    <div class="carousel-item" style="height:450px;">
-      <img
-        src="images/paczki.jpg"
-        class="d-block mx-auto"
-        style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
-        alt="Holiday Cookie Tray"
-      />
-    </div>
-
-    <!-- Slide 3: pre-order text -->
-    <div class="carousel-item bg-light d-flex align-items-center justify-content-center" style="height:450px; border-radius: 15px;">
-      <div class="text-center">
-        <h5 class="text-danger">🛒 Order Online!</h5>
-        <p class="text-dark">Skip the wait — pre-order your favorite treats today through our website or Google!</p>
+      <div class="carousel-item active" style="height:450px;">
+        <img
+          src="images/IMG_6008.JPG"
+          class="d-block mx-auto"
+          style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
+          alt="Easter Bakery Special"
+        />
       </div>
+
+      <div class="carousel-item" style="height:450px;">
+        <img
+          src="images/paczki.jpg"
+          class="d-block mx-auto"
+          style="height: 100%; width: auto; max-width: 100%; border-radius: 15px; object-fit: contain;"
+          alt="Easter Treats"
+        />
+      </div>
+
+      <div class="carousel-item bg-light d-flex align-items-center justify-content-center" style="height:450px; border-radius: 15px;">
+        <div class="text-center">
+          <h5 class="text-danger">🛒 Order Online!</h5>
+          <p class="text-dark">Skip the wait — pre-order your favorite Easter treats today through our website or Google!</p>
+        </div>
+      </div>
+
     </div>
 
+    <button class="carousel-control-prev" type="button" data-bs-target="#easterCarousel" data-bs-slide="prev"></button>
+    <button class="carousel-control-next" type="button" data-bs-target="#easterCarousel" data-bs-slide="next"></button>
   </div>
-
-  <!-- Carousel Controls (no span icons, arrows come from CSS ::before) -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#easterCarousel" data-bs-slide="prev"></button>
-  <button class="carousel-control-next" type="button" data-bs-target="#easterCarousel" data-bs-slide="next"></button>
-</div>
-
 
 </main>
 
-
-<!-- Footer -->
 <footer class="bg-dark text-white py-4 mt-5 fade-in-up">
   <div class="container text-center">
     <p class="mb-1">&copy; 2025 Monroe Bakery. All Rights Reserved.</p>
@@ -299,7 +268,6 @@
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
