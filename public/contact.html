@@ -11,20 +11,33 @@
 
   <style>
     /* Fade animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out both;
-}
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out both;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.25s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.4s;
+    }
+
     .navbar {
       background-color: #b21f1f !important;
       z-index: 1050;
@@ -179,7 +192,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
   <div class="container">
     <a class="navbar-brand" href="/index.html">Monroe Bakery</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -201,14 +214,14 @@
   </div>
 </nav>
 
-<header class="py-4">
+<header class="py-4 fade-in-up delay-1">
   <div class="container text-center">
     <h1>Contact Us</h1>
   </div>
 </header>
 
 <main>
-  <section class="contact-wrapper">
+  <section class="contact-wrapper fade-in-up delay-2">
     <div class="contact-card">
       <h2 class="contact-title">We’d Love to Hear From You!</h2>
 
@@ -238,7 +251,7 @@
   </section>
 </main>
 
-<footer class="text-white py-4 mt-5">
+<footer class="text-white py-4 mt-5 fade-in-up delay-3">
   <div class="container text-center">
     <p class="mb-1">&copy; 2025 Monroe Bakery. All Rights Reserved.</p>
     <p class="small">2611 Monroe St, Dearborn, MI 48124</p>
