@@ -10,6 +10,21 @@
   <link href="/images/Real.png" rel="icon" type="image/png" />
 
   <style>
+    /* Fade animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
     .navbar {
       background-color: #b21f1f !important;
       z-index: 1050;
