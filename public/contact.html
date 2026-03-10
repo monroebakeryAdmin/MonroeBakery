@@ -10,11 +10,11 @@
   <link href="/images/Real.png" rel="icon" type="image/png" />
 
   <style>
-    /* Navbar styling (matches all other pages) */
     .navbar {
       background-color: #b21f1f !important;
       z-index: 1050;
     }
+
     .navbar-brand {
       font-weight: bold;
       color: #fff !important;
@@ -28,15 +28,16 @@
       padding: 6px 10px;
       transition: background 0.3s ease;
     }
+
     .navbar-toggler:hover {
       background: rgba(255,255,255,0.25);
     }
+
     .navbar-toggler:focus {
       box-shadow: none;
       outline: none;
     }
 
-    /* âœ… White hamburger icon inside translucent rounded box */
     .navbar-toggler-icon {
       width: 1.4em;
       height: 1.4em;
@@ -47,61 +48,125 @@
     .navbar-nav .nav-link {
       color: #fff !important;
     }
+
     .navbar-nav .nav-link.active {
       font-weight: bold;
       text-decoration: underline;
     }
 
+    body {
+      background: #fffaf8;
+    }
+
+    header {
+      background: linear-gradient(to bottom, #fff6f6, #fffaf8);
+      border-bottom: 1px solid #f1d9d9;
+    }
+
     header h1 {
       color: #b21f1f;
       font-family: "Georgia", serif;
+      font-size: 2.4rem;
+      margin: 0;
     }
 
-    section h2 {
+    .contact-wrapper {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid #f1dede;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 45px 35px;
+    }
+
+    .contact-title {
+      color: #b21f1f;
       font-family: "Georgia", serif;
-    }
-
-    /* Center alignment for contact info */
-    .contact-section {
+      font-size: 2.2rem;
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
 
-    .contact-section h3 {
+    .info-block {
+      margin-bottom: 2.2rem;
+    }
+
+    .info-block h3 {
       color: #b21f1f;
-      margin-top: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.25rem;
     }
 
-    .contact-section ul {
-      padding-left: 0;
+    .contact-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: #212529;
+      text-align: center;
+    }
+
+    .contact-line i {
+      color: #b21f1f;
+      font-size: 1.25rem;
+    }
+
+    .hours-list {
       list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
     }
 
-    /* Thanksgiving Notice Box */
-    .thanksgiving-box {
-      background: #fff5f5;
-      border: 1px solid #f3dede;
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin-top: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    .hours-list li {
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+      color: #212529;
     }
-    .thanksgiving-box h5 {
-      color: #b21f1f;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+
+    .hours-list strong {
+      color: #111;
+    }
+
+    footer {
+      background: #1f252d;
+    }
+
+    @media (max-width: 576px) {
+      .contact-card {
+        padding: 30px 20px;
+      }
+
+      .contact-title {
+        font-size: 1.8rem;
+      }
+
+      .info-block h3 {
+        font-size: 1.5rem;
+      }
+
+      .contact-line,
+      .hours-list li {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Monroe Bakery</a>
+    <a class="navbar-brand" href="/index.html">Monroe Bakery</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -121,39 +186,44 @@
   </div>
 </nav>
 
-<!-- Header -->
-<header class="bg-light py-3 mb-4 fade-in-up">
+<header class="py-4">
   <div class="container text-center">
     <h1>Contact Us</h1>
   </div>
 </header>
 
-<!-- Main Content -->
 <main>
-  <section class="container my-5 fade-in-up contact-section">
-    <h2 class="text-danger mb-4">We’d Love to Hear From You!</h2>
+  <section class="contact-wrapper">
+    <div class="contact-card">
+      <h2 class="contact-title">We’d Love to Hear From You!</h2>
 
-    <h3>Contact Details</h3>
-    <p><strong>Address:</strong> 2611 Monroe St, Dearborn, MI 48124</p>
-    <p><strong>Phone:</strong> (313) 561-5400</p>
+      <div class="info-block">
+        <h3>Contact Details</h3>
 
-    <h3>Hours of Operation</h3>
-    <ul>
-      <li><strong>Monday to Friday:</strong> 6:00 a.m. – 6:00 p.m.</li>
-      <li><strong>Saturday:</strong> 7:00 a.m. – 3:00 p.m.</li>
-      <li><strong>Closed:</strong> Sundays</li>
-    </ul>
+        <div class="contact-line">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span><strong>Address:</strong> 2611 Monroe St, Dearborn, MI 48124</span>
+        </div>
 
-    <!-- Thanksgiving Notice -->
-    <div class="thanksgiving-box">
-      <h5>🦃 Thanksgiving Schedule</h5>
-      <p>We’ll be closed <strong>November 27th – 30th</strong> for the Thanksgiving holiday — please make sure to place your orders early!</p>
+        <div class="contact-line">
+          <i class="bi bi-telephone-fill"></i>
+          <span><strong>Phone:</strong> (313) 561-5400</span>
+        </div>
+      </div>
+
+      <div class="info-block mb-0">
+        <h3>Hours of Operation</h3>
+        <ul class="hours-list">
+          <li><strong>Monday to Friday:</strong> 6:00 a.m. – 6:00 p.m.</li>
+          <li><strong>Saturday:</strong> 7:00 a.m. – 3:00 p.m.</li>
+          <li><strong>Closed:</strong> Sundays</li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-dark text-white py-4 mt-5 fade-in-up">
+<footer class="text-white py-4 mt-5">
   <div class="container text-center">
     <p class="mb-1">&copy; 2025 Monroe Bakery. All Rights Reserved.</p>
     <p class="small">2611 Monroe St, Dearborn, MI 48124</p>
@@ -168,8 +238,6 @@
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
