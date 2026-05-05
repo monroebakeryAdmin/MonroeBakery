@@ -57,50 +57,87 @@
       text-decoration: underline;
     }
 
-    /* Accordion styling */
-    .accordion-button {
-      font-weight: bold;
-      font-size: 1.25rem;
-      color: #b21f1f;
-      background-color: #fffaf6;
-    }
-    .accordion-button:not(.collapsed) {
-      color: #fff;
-      background-color: #b21f1f;
-    }
-
-    .accordion-body p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /* --- Menu Category Boxes --- */
-    .menu-category-box {
-      flex: 1 1 220px;
-      max-width: 300px;
+    /* Menu styling */
+    .menu-section {
       background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease-in-out;
+      border: 1px solid #f0d9d9;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    .menu-category-box:hover {
-      transform: translateY(-3px);
+
+    .menu-section h2 {
+      color: #b21f1f;
+      margin-bottom: 1rem;
+      font-size: 2rem;
     }
-    .menu-category-box h6 {
-      font-weight: bold;
+
+    .menu-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .menu-card {
+      background: #fff8f4;
+      border: 1px solid #f1d9d9;
+      border-radius: 14px;
+      padding: 1.3rem;
+      min-height: 220px;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .menu-card:hover {
+      box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    }
+
+    .menu-card h3 {
       color: #b21f1f;
       margin-bottom: 0.75rem;
-    }
-    .menu-category-box ul {
-      padding-left: 1rem;
-    }
-    .menu-category-box li {
-      margin-bottom: 0.4rem;
+      font-size: 1.35rem;
     }
 
-    .accordion-body .d-flex {
-      justify-content: center;
+    .menu-card ul {
+      padding-left: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .menu-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-intro {
+      max-width: 760px;
+      margin: 0 auto 2rem auto;
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .menu-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .menu-table th,
+    .menu-table td {
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid #f0d9d9;
+      color: #333;
+    }
+
+    .menu-table th {
+      text-align: left;
+      color: #9d2020;
+      font-weight: 700;
+    }
+
+    @media (max-width: 767px) {
+      .menu-section {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -139,197 +176,88 @@
 
   <!-- Main Content -->
   <main class="container mb-5 fade-in-up">
-    <div class="accordion" id="menuAccordion">
-
-      <!-- 🥐 Pastries -->
-      <div class="accordion-item shadow-sm mb-3">
-        <h2 class="accordion-header" id="headingPastries">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsePastries" aria-expanded="false" aria-controls="collapsePastries">
-            🥐 Pastries
-          </button>
-        </h2>
-        <div id="collapsePastries" class="accordion-collapse collapse" aria-labelledby="headingPastries"
-          data-bs-parent="#menuAccordion">
-          <div class="accordion-body">
-            <p class="text-muted">Our pastries are baked fresh every morning, filled with rich creams and fruits.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <div class="menu-category-box">
-                <h6>Filled Pastries</h6>
-                <ul>
-                  <li>Pecan Croissants</li>
-                  <li>Cheese Croissants</li>
-                  <li>Cream Horns</li>
-                  <li>Danish</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Fruit & Strudel</h6>
-                <ul>
-                  <li>Twists – Raspberry, Apricot</li>
-                  <li>Apple or Cherry Pies</li>
-                  <li>Apple or Cherry Strudel</li>
-                  <li>Apple or Cherry Turnovers</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <section class="menu-section">
+      <p class="menu-intro">Here is our current menu in a clean, simple format. Everything is grouped by category so it’s easy to browse.</p>
+      <div class="menu-row">
+        <div class="menu-card">
+          <h3>🥐 Pastries</h3>
+          <ul>
+            <li>Pecan Croissants</li>
+            <li>Cheese Croissants</li>
+            <li>Cream Horns</li>
+            <li>Danish</li>
+            <li>Twists – Raspberry, Apricot</li>
+            <li>Apple or Cherry Pies</li>
+            <li>Apple or Cherry Strudel</li>
+            <li>Apple or Cherry Turnovers</li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>🍰 Cakes & Desserts</h3>
+          <ul>
+            <li>Marble, Vanilla, Chocolate Cakes</li>
+            <li>Carrot Cake</li>
+            <li>Red Velvet Cake</li>
+            <li>Pound Cakes – Marble, Lemon</li>
+            <li>Cream Cakes – Blueberry, Pistachio</li>
+            <li>Cupcakes – Vanilla, Chocolate, Peanut Butter</li>
+            <li>Cannolis</li>
+            <li>Tiramisu</li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>🍪 Cookies & Treats</h3>
+          <ul>
+            <li>Chocolate Chip Cookies</li>
+            <li>Oatmeal Cookies – Raisin, Date, Apricot</li>
+            <li>M&M Cookies</li>
+            <li>Peanut Butter Cookies</li>
+            <li>Soft Butter Cookies</li>
+            <li>Brownies</li>
+            <li>Tea Rings</li>
+            <li>Nut Rolls</li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>🍞 Bread & Rolls</h3>
+          <ul>
+            <li>French Bread</li>
+            <li>White Bread</li>
+            <li>Egg Bread</li>
+            <li>Potato Bread</li>
+            <li>Sourdough Rye</li>
+            <li>Whole Wheat</li>
+            <li>Health Bread (7-Grain)</li>
+            <li>Banana Bread, Zucchini Bread</li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>🍩 Donuts</h3>
+          <ul>
+            <li>Regular Glaze</li>
+            <li>Chocolate Glaze</li>
+            <li>Cinnamon Roll</li>
+            <li>Glazed Twist Donut</li>
+            <li>Plain Fry Cake</li>
+            <li>Chocolate Fry Cake</li>
+            <li>Apple Fritter</li>
+            <li>Custard & Raspberry Filled Donuts</li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>🥟 Savory Treats</h3>
+          <ul>
+            <li>Spinach Bistro</li>
+            <li>Leek Bistro</li>
+            <li>Breakfast Croissant (Bacon, Egg, Cheese)</li>
+            <li>Spinach Pie</li>
+            <li>Chicken Pasty</li>
+            <li>Beef Pasty</li>
+            <li>Pepperoni Rolls</li>
+          </ul>
         </div>
       </div>
-
-      <!-- 🍰 Cakes -->
-      <div class="accordion-item shadow-sm mb-3">
-        <h2 class="accordion-header" id="headingCakes">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseCakes" aria-expanded="false" aria-controls="collapseCakes">
-            🍰 Cakes, Cupcakes & Cannolis
-          </button>
-        </h2>
-        <div id="collapseCakes" class="accordion-collapse collapse" aria-labelledby="headingCakes"
-          data-bs-parent="#menuAccordion">
-          <div class="accordion-body">
-            <p class="text-muted">Perfect for celebrations, gatherings, or an everyday treat.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <div class="menu-category-box">
-                <h6>Cakes</h6>
-                <ul>
-                  <li>Marble, Vanilla, Chocolate</li>
-                  <li>Carrot, Red Velvet</li>
-                  <li>Pound Cakes – Marble, Lemon</li>
-                  <li>Cream Cakes – Blueberry, Pistachio</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Cupcakes</h6>
-                <ul>
-                  <li>Vanilla</li>
-                  <li>Chocolate</li>
-                  <li>Peanut Butter</li>
-                  <li>Oreo</li>
-                  <li>Cherry</li>
-                  <li>German Chocolate</li>
-                  <li>Dubai Chocolate</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Other Desserts</h6>
-                <ul>
-                  <li>Cannolis</li>
-                  <li>Tiramisu</li>
-                  <li>Cheesecake</li>
-                  <li>Truffles</li>
-                  <li>Eclairs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 🍪 Cookies -->
-      <div class="accordion-item shadow-sm mb-3">
-        <h2 class="accordion-header" id="headingCookies">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseCookies" aria-expanded="false" aria-controls="collapseCookies">
-            🍪 Cookies & Desserts
-          </button>
-        </h2>
-        <div id="collapseCookies" class="accordion-collapse collapse" aria-labelledby="headingCookies"
-          data-bs-parent="#menuAccordion">
-          <div class="accordion-body">
-            <p class="text-muted">Classic cookies and rich desserts, baked fresh daily.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <div class="menu-category-box">
-                <h6>Classic Cookies</h6>
-                <ul>
-                  <li>Chocolate Chip</li>
-                  <li>Oatmeal – Raisin, Date, Apricot</li>
-                  <li>M&M Cookies</li>
-                  <li>Peanut Butter</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Soft Butter Cookies</h6>
-                <ul>
-                  <li>Chocolate Chip</li>
-                  <li>Chocolate Sprinkle</li>
-                  <li>Rainbow Sprinkle</li>
-                  <li>Raspberry Dip</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Other Treats</h6>
-                <ul>
-                  <li>Brownies</li>
-                  <li>Donuts</li>
-                  <li>Tea Rings</li>
-                  <li>Nut Rolls</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 🍞 Bread -->
-      <div class="accordion-item shadow-sm">
-        <h2 class="accordion-header" id="headingBread">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseBread" aria-expanded="false" aria-controls="collapseBread">
-            🍞 Bread, Rolls & Savory
-          </button>
-        </h2>
-        <div id="collapseBread" class="accordion-collapse collapse" aria-labelledby="headingBread"
-          data-bs-parent="#menuAccordion">
-          <div class="accordion-body">
-            <p class="text-muted">From hearty loaves to savory rolls, baked with old-world tradition.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <div class="menu-category-box">
-                <h6>Savory Items</h6>
-                <ul>
-                  <li>Spinach or Leek Bistros</li>
-                  <li>Breakfast Croissants</li>
-                  <li>Pasties – Chicken or Beef</li>
-                  <li>Pepperoni Rolls</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Classic Breads</h6>
-                <ul>
-                  <li>French, White, Egg Bread</li>
-                  <li>Potato Bread</li>
-                  <li>Sourdough Rye</li>
-                  <li>Whole Wheat</li>
-                  <li>Health Bread (7-Grain)</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Specialty Breads</h6>
-                <ul>
-                  <li>Sesame or Poppy Seed</li>
-                  <li>Cinnamon</li>
-                  <li>Pumpernickel</li>
-                  <li>Marble Rye</li>
-                  <li>Caraway</li>
-                  <li>Banana Bread (SM/MD/LG)</li>
-                  <li>Zucchini Bread (SM/MD/LG)</li>
-                </ul>
-              </div>
-              <div class="menu-category-box">
-                <h6>Rolls & Buns</h6>
-                <ul>
-                  <li>Sesame, Potato, Onion Rolls</li>
-                  <li>Hot Dog Buns</li>
-                  <li>Sub Rolls</li>
-                  <li>Butter-Flake Rolls</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
