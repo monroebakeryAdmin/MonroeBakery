@@ -2,6 +2,16 @@ import { connectDB } from "./db.js";
 import Order from "../backend/models/Order.js";
 import nodemailer from "nodemailer";
 
+function escapeHtml(value = "") {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[character]);
+}
+
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -28,6 +38,15 @@ export default async function handler(req, res) {
         message
       });
 
+      if (!process.env.BUSINESS_EMAIL || !process.env.BUSINESS_PASS) {
+        console.error("Order saved, but BUSINESS_EMAIL or BUSINESS_PASS is not configured.");
+        return res.status(201).json({
+          message: "Order received; bakery email notification is not configured.",
+          orderSaved: true,
+          notificationSent: false
+        });
+      }
+
       try {
         const transporter = nodemailer.createTransport({
           host: "smtp.gmail.com",
@@ -42,22 +61,30 @@ export default async function handler(req, res) {
         await transporter.sendMail({
           from: process.env.BUSINESS_EMAIL,
           to: process.env.BUSINESS_EMAIL,
-          subject: `🧁 New Pre-Order from ${name}`,
+          subject: `New Pre-Order from ${name}`,
           html: `
             <h3>New Pre-Order Received</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Items:</strong> ${items}</p>
-            <p><strong>Date Needed:</strong> ${dateNeeded}</p>
-            <p><strong>Message:</strong> ${message || "None"}</p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+            <p><strong>Items:</strong> ${escapeHtml(items)}</p>
+            <p><strong>Date Needed:</strong> ${escapeHtml(dateNeeded)}</p>
+            <p><strong>Message:</strong> ${escapeHtml(message || "None")}</p>
           `
+        });
+        return res.status(201).json({
+          message: "Order received!",
+          orderSaved: true,
+          notificationSent: true
         });
       } catch (err) {
         console.error("Order saved, but notification email failed:", err);
+        return res.status(201).json({
+          message: "Order received, but bakery email notification failed.",
+          orderSaved: true,
+          notificationSent: false
+        });
       }
-
-      return res.status(201).json({ message: "Order received!" });
 
     } catch (err) {
       console.error("Error:", err);

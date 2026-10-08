@@ -65,6 +65,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
+      const result = await response.json();
       // These responses are returned before an order is saved, so retrying is safe.
       if (response.status === 400 || response.status === 503) {
         state = 'idle';
@@ -78,7 +79,9 @@
         cart = {};
         renderCart();
         form.reset();
-        status.textContent = 'Thank you! Your pre-order has been received. We’ll confirm the details by email or text.';
+        status.textContent = result.notificationSent === false
+          ? 'Your pre-order was received, but the bakery email alert could not be sent. Please call (313) 561-5400 to let us know. Do not submit the order again.'
+          : 'Thank you! Your pre-order has been received. We’ll confirm the details by email or text.';
         newOrder.hidden = false;
       }
     } catch (_) {
