@@ -5,7 +5,7 @@ body {
     color: #000;
     margin: 0;
     background-color: #fffaf6;
-    background-image: url("ricepaper_v3.webp"); /* Optional: add a subtle image */
+    background-image: url("images/ricepaper_v3.webp"); /* Optional: add a subtle image */
     background-size: cover;
     background-repeat: repeat;
 }
@@ -129,20 +129,6 @@ section p, ul {
     transition: all 0.2s ease-in-out;
 }
 
-
-/* Footer */
-footer {
-    background-color: #b21f1f;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
 
 /* Gallery Carousel */
 .carousel img {

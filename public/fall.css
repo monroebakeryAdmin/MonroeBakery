@@ -1,0 +1,74 @@
+/* Shared autumn palette; loaded after each page's existing styles. */
+:root {
+  --fall-rust: #97421f;
+  --fall-brown: #4b291c;
+  --fall-cream: #fff8ed;
+  --fall-border: #e6c7a6;
+}
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  color: #39291f;
+  background: #faf0df;
+  opacity: 0;
+  animation: pageFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+body .navbar { background-color: var(--fall-brown) !important; }
+header.bg-light, .custom-header { background: #f5dfbf !important; }
+header h1, section h2, .menu-card h3, #itemList h6 { color: var(--fall-rust); }
+body .text-danger { color: var(--fall-rust) !important; }
+body .bg-danger { background-color: var(--fall-rust) !important; }
+section, .menu-section { background-color: var(--fall-cream); border-color: var(--fall-border); }
+.menu-card { border-color: var(--fall-border); }
+a { color: #863819; }
+a:hover { color: #592714; }
+.btn-danger, .btn-primary, .btn-success {
+  --bs-btn-bg: #97421f;
+  --bs-btn-border-color: #97421f;
+  --bs-btn-hover-bg: #713017;
+  --bs-btn-hover-border-color: #713017;
+  --bs-btn-active-bg: #592714;
+  --bs-btn-active-border-color: #592714;
+  background-color: var(--fall-rust);
+  border-color: var(--fall-rust);
+  color: #fff;
+}
+.btn-primary:hover, .btn-success:hover, .add-btn:hover { background-color: #713017; }
+.add-btn { background-color: var(--fall-rust); }
+.item-row:hover, .cart-item { background-color: #fff1dd; border-color: var(--fall-border); }
+.hero::before { background: linear-gradient(100deg, rgba(56, 25, 12, .88), rgba(92, 43, 18, .66)); }
+.hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); }
+.hero { padding: clamp(70px, 10vw, 140px) 0; }
+.season-label {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #7c3b20;
+}
+.hero .season-label { font-size: .85rem; color: #ffe1ac !important; }
+.holiday-callout {
+  background: linear-gradient(120deg, #f7dfb9, #fff3df);
+  border: 1px solid #d4a56e;
+  border-top: 5px solid var(--fall-rust);
+}
+.holiday-callout a:not(.btn) { font-weight: 700; text-decoration: underline; }
+.season-card { background: #fff2df; border: 1px solid var(--fall-border); }
+.season-card h3, .holiday-callout h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--fall-rust); }
+a:focus-visible, button:focus-visible, .navbar-toggler:focus-visible {
+  outline: 3px solid #ce8b38;
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}

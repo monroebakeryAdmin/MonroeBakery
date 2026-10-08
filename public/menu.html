@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu - Monroe Bakery</title>
-  <link href="/images/Real.png" rel="icon" type="image/png" />
+  <link href="images/Real.png" rel="icon" type="image/png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/menustyles.css" rel="stylesheet" />
+  <link href="menustyles.css?v=fall-20261008-2" rel="stylesheet" />
 
   <style>
     body {
@@ -57,157 +57,95 @@
       text-decoration: underline;
     }
 
-    /* Menu styling */
-    .menu-section {
-      background: #fff;
-      border: 1px solid #f0d9d9;
-      border-radius: 18px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .menu-section h2 {
-      color: #b21f1f;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    .menu-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .menu-card {
-      background: #fff8f4;
-      border: 1px solid #f1d9d9;
-      border-radius: 14px;
-      padding: 1.3rem;
-      min-height: 220px;
-      transition: box-shadow 0.25s ease;
-    }
-
-    .menu-card:hover {
-      box-shadow: 0 12px 25px rgba(0,0,0,0.08);
-    }
-
-    .menu-card h3 {
-      color: #b21f1f;
-      margin-bottom: 0.75rem;
-      font-size: 1.35rem;
-    }
-
-    .menu-card ul {
-      padding-left: 1.1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .menu-card li {
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-intro {
-      max-width: 760px;
-      margin: 0 auto 2rem auto;
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .menu-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    .menu-table th,
-    .menu-table td {
-      padding: 0.75rem 0.5rem;
-      border-bottom: 1px solid #f0d9d9;
-      color: #333;
-    }
-
-    .menu-table th {
-      text-align: left;
-      color: #9d2020;
-      font-weight: 700;
-    }
-
-    @media (max-width: 767px) {
-      .menu-section {
-        padding: 1.5rem;
-      }
-    }
   </style>
+  <link href="fall.css?v=fall-20261008-2" rel="stylesheet" />
+  <link href="menu.css?v=fall-20261008-2" rel="stylesheet" />
+  <link href="footer.css?v=fall-20261008-2" rel="stylesheet" />
+  <script src="footer.js?v=fall-20261008-2" defer></script>
 </head>
 
-<body>
+<body class="menu-page">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="/index.html">Monroe Bakery</a>
+      <a class="navbar-brand fw-bold" href="index.html">Monroe Bakery</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/news.html">News</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/menu.html">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="/preorder.html">Pre-Order</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="preorder.html">Pre-Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="bg-light py-4 mb-4 shadow-sm fade-in-up">
-    <div class="container text-center">
-      <img src="/images/Real.png" alt="Monroe Bakery Logo" style="height: 80px;" />
-      <h1 class="mt-3 text-danger">Our Menu</h1>
-      <p class="text-muted">Freshly baked goods made daily with love and tradition.</p>
+  <header class="menu-hero">
+    <div class="container menu-hero-inner">
+      <div>
+        <p class="season-label">Monroe Bakery &bull; Dearborn, Michigan</p>
+        <h1>Find your<br><em>new favorite.</em></h1>
+        <p class="menu-hero-copy">Old-world recipes. Everyday delights. From your morning donut to a cake worth gathering around, there's something sweet waiting for you.</p>
+        <a href="#bakery-menu" class="btn btn-danger btn-lg">Browse the Menu</a>
+        <a href="preorder.html" class="menu-text-link">Start a pre-order <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <figure class="hero-pastries"><img src="images/menu-apricot-danish.png" alt="Apricot boat Danish with white icing" width="1254" height="1254"><figcaption>A little taste of tradition</figcaption></figure>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mb-5 fade-in-up">
-    <section class="menu-section">
-      <p class="menu-intro">Here is our current menu in a clean, simple format. Everything is grouped by category so it’s easy to browse.</p>
-      <div class="menu-row">
-        <div class="menu-card">
-          <h3>🥐 Pastries</h3>
-          <ul>
+  <main class="container menu-main">
+    <section class="fall-menu-feature" aria-labelledby="fall-title">
+      <div class="fall-feature-intro"><p class="season-label">The season's sweetest arrivals</p><h2 id="fall-title">Hello, fall.</h2><p>Your cozy morning starts here.</p></div>
+      <div class="fall-flavors"><div><h3>Cozy morning favorites</h3><p>Pumpkin Spice Donuts<br>Apple Cider Donuts</p></div><div><h3>For your fall table</h3><p>Pumpkin Pies<br>Pumpkin Cream Cakes<br>Pumpkin Squares<br>Sweet Potato Pies<br>Pecan Pies</p></div></div>
+      <a href="preorder.html" class="fall-order-link">Order your fall favorites <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <section class="bakery-menu" id="bakery-menu" aria-labelledby="menu-title">
+      <div class="menu-heading"><div><p class="season-label">From our ovens to your table</p><h2 id="menu-title">The bakery menu</h2></div><p>A favorite for every craving.</p></div>
+      <nav class="category-links" aria-label="Menu categories"><a href="#pastries">Pastries</a>
+<a href="#desserts">Cakes & Desserts</a>
+<a href="#cookies">Cookies & Treats</a>
+<a href="#bread">Bread & Rolls</a>
+<a href="#donuts">Donuts</a>
+<a href="#savory">Savory Treats</a></nav>
+      <div class="bakery-grid"><article class="bakery-card" id="pastries" aria-labelledby="pastries-title">
+          <div class="bakery-photo"><img src="images/menu-apricot-danish.png" alt="Apricot boat Danish with white icing" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="pastries-title">Pastries</h3><p class="category-note">Flaky layers & fruit-filled favorites</p><ul>
             <li>Pecan Croissants</li>
             <li>Cheese Croissants</li>
             <li>Cream Horns</li>
             <li>Danish</li>
             <li>Twists – Raspberry, Apricot</li>
             <li>Apple or Cherry Pies</li>
+            <li>Pumpkin Pies <span class="fall-tag">Fall</span></li>
+            <li>Sweet Potato Pies <span class="fall-tag">Fall</span></li>
+            <li>Pecan Pies <span class="fall-tag">Fall</span></li>
             <li>Apple or Cherry Strudel</li>
             <li>Apple or Cherry Turnovers</li>
-          </ul>
-        </div>
-        <div class="menu-card">
-          <h3>🍰 Cakes & Desserts</h3>
-          <ul>
-            <li>Marble, Vanilla, Chocolate Cakes</li>
-            <li>Carrot Cake</li>
-            <li>Red Velvet Cake</li>
+          </ul></div>
+        </article>
+<article class="bakery-card" id="desserts" aria-labelledby="desserts-title">
+          <div class="bakery-photo"><img src="images/menu-cannoli-white.png" alt="Chocolate-topped cannolis" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="desserts-title">Cakes & Desserts</h3><p class="category-note">A sweet finish for every occasion</p><ul>
+            <li>Pumpkin Cream Cakes <span class="fall-tag">Fall</span></li>
+            <li>Pumpkin Squares <span class="fall-tag">Fall</span></li>
             <li>Pound Cakes – Marble, Lemon</li>
             <li>Cream Cakes – Blueberry, Pistachio</li>
             <li>Cupcakes – Vanilla, Chocolate, Peanut Butter</li>
             <li>Cannolis</li>
             <li>Tiramisu</li>
-          </ul>
-        </div>
-        <div class="menu-card">
-          <h3>🍪 Cookies & Treats</h3>
-          <ul>
+          </ul></div>
+        </article>
+<article class="bakery-card" id="cookies" aria-labelledby="cookies-title">
+          <div class="bakery-photo"><img src="images/menu-brownie-white.png" alt="Bakery brownies" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="cookies-title">Cookies & Treats</h3><p class="category-note">Little treats. Plenty to share.</p><ul>
             <li>Chocolate Chip Cookies</li>
             <li>Oatmeal Cookies – Raisin, Date, Apricot</li>
             <li>M&M Cookies</li>
@@ -216,11 +154,11 @@
             <li>Brownies</li>
             <li>Tea Rings</li>
             <li>Nut Rolls</li>
-          </ul>
-        </div>
-        <div class="menu-card">
-          <h3>🍞 Bread & Rolls</h3>
-          <ul>
+          </ul></div>
+        </article>
+<article class="bakery-card" id="bread" aria-labelledby="bread-title">
+          <div class="bakery-photo"><img src="images/menu-bread-white.png" alt="Fresh bakery loaves" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="bread-title">Bread & Rolls</h3><p class="category-note">A place at every table</p><ul>
             <li>French Bread</li>
             <li>White Bread</li>
             <li>Egg Bread</li>
@@ -229,11 +167,13 @@
             <li>Whole Wheat</li>
             <li>Health Bread (7-Grain)</li>
             <li>Banana Bread, Zucchini Bread</li>
-          </ul>
-        </div>
-        <div class="menu-card">
-          <h3>🍩 Donuts</h3>
-          <ul>
+          </ul></div>
+        </article>
+<article class="bakery-card" id="donuts" aria-labelledby="donuts-title">
+          <div class="bakery-photo"><img src="images/menu-donuts-white.png" alt="An assortment of bakery donuts" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="donuts-title">Donuts</h3><p class="category-note">Make your morning a little sweeter</p><ul>
+            <li>Pumpkin Spice Donuts <span class="fall-tag">Fall</span></li>
+            <li>Apple Cider Donuts <span class="fall-tag">Fall</span></li>
             <li>Regular Glaze</li>
             <li>Chocolate Glaze</li>
             <li>Cinnamon Roll</li>
@@ -242,11 +182,11 @@
             <li>Chocolate Fry Cake</li>
             <li>Apple Fritter</li>
             <li>Custard & Raspberry Filled Donuts</li>
-          </ul>
-        </div>
-        <div class="menu-card">
-          <h3>🥟 Savory Treats</h3>
-          <ul>
+          </ul></div>
+        </article>
+<article class="bakery-card" id="savory" aria-labelledby="savory-title">
+          <div class="bakery-photo"><img src="images/menu-savory-triangles.png" alt="Golden flaky spinach-filled triangular pastries" loading="lazy" width="600" height="400"></div>
+          <div class="bakery-card-content"><h3 id="savory-title">Savory Treats</h3><p class="category-note">Something delicious on the savory side</p><ul>
             <li>Spinach Bistro</li>
             <li>Leek Bistro</li>
             <li>Breakfast Croissant (Bacon, Egg, Cheese)</li>
@@ -254,27 +194,20 @@
             <li>Chicken Pasty</li>
             <li>Beef Pasty</li>
             <li>Pepperoni Rolls</li>
-          </ul>
-        </div>
-      </div>
+          </ul></div>
+        </article></div>
+    </section>
+
+    <section class="menu-holiday" aria-labelledby="holiday-title">
+      <div><p class="season-label">Good things are better together</p><h2 id="holiday-title">Save a place for something sweet.</h2><p>We're taking holiday orders! Bring cakes, cookies, breads, and pastries to your next gathering.</p><p class="small">Online orders: 1&ndash;21 days ahead. Planning further ahead? Call <a href="tel:+13135615400">(313) 561-5400</a>.</p></div>
+      <a href="preorder.html" class="btn btn-danger btn-lg">Plan Your Holiday Order</a>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-5 fade-in-up">
-    <div class="container text-center">
-      <p class="mb-1">&copy; 2025 Monroe Bakery. All Rights Reserved.</p>
-      <p class="small">2611 Monroe St, Dearborn, MI 48124</p>
-      <div class="mt-2">
-        <a href="https://www.instagram.com/monroe_bakery_mi/?igsh=OHVneTBrNGRyeXo3#" target="_blank" aria-label="Instagram" class="text-light mx-2">
-          <i class="bi bi-instagram" style="font-size:1.5rem;"></i>
-        </a>
-        <a href="https://www.facebook.com/share/1D61aYNFvg/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="text-light mx-2">
-          <i class="bi bi-facebook" style="font-size:1.5rem;"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
+  <footer id="site-footer">
+  <noscript><a href="contact.html">Contact Monroe Bakery</a></noscript>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

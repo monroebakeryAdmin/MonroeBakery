@@ -1,0 +1,68 @@
+.menu-page { background: #faf3e8; color: #4b291c; }
+.menu-page h1, .menu-page h2, .menu-page h3 { font-family: Georgia, 'Times New Roman', serif; }
+.menu-hero { background: #f4e5cf; padding: 4.5rem 0 4rem; box-shadow: none; text-align: left; border-bottom: 1px solid #dfc4a3; }
+.menu-hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 3rem; }
+.menu-hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.06; letter-spacing: -.045em; color: #4b291c; margin: 1rem 0 1.5rem; }
+.menu-hero h1 em { color: #97421f; font-weight: normal; }
+.menu-hero .season-label { font-size: .75rem; color: #7c3b20; }
+.menu-hero-copy { max-width: 34rem; font-size: 1rem; line-height: 1.8; color: #634d40; margin-bottom: 1.75rem; }
+.menu-text-link { display: inline-block; margin: 1rem 0 0 1.2rem; font-size: .95rem; text-underline-offset: 5px; }
+.hero-pastries { margin: 0; padding: 1rem 1rem 1.4rem; background: #fffaf2; border-radius: 48% 48% 1rem 1rem; box-shadow: 0 16px 40px #4b291c12; transform: rotate(2deg); }
+.hero-pastries img { display: block; width: 100%; height: auto; aspect-ratio: 1.25; object-fit: contain; border-radius: 48% 48% .5rem .5rem; }
+.hero-pastries figcaption { text-align: center; font: italic 1.15rem Georgia, serif; padding-top: 1rem; color: #7c3b20; }
+.menu-main { padding-top: 2.5rem; }
+.menu-page main section { max-width: none; margin: 0 0 3.5rem; box-shadow: none; }
+.menu-page .fall-menu-feature { background: #4b291c; color: #fff4e2; border: none; border-radius: 18px; padding: 2.5rem; display: grid; grid-template-columns: .85fr 2fr; gap: 1rem 2.5rem; }
+.fall-menu-feature .season-label { color: #efbd7d; font-size: .7rem; }
+.fall-menu-feature h2 { color: #fff4e2; font-size: 3rem; text-align: left; margin: .5rem 0; }
+.fall-menu-feature p { font-size: .9rem; }
+.fall-flavors { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.fall-flavors h3 { color: #ffe0b3; font-size: 1.6rem; margin: .5rem 0; }
+.fall-order-link { grid-column: 2; color: #ffe0b3; text-underline-offset: 5px; font-size: .9rem; }
+.fall-order-link:hover { color: white; }
+.menu-page .bakery-menu { padding: 0; border: 0; background: transparent; scroll-margin-top: 90px; }
+.menu-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.menu-heading h2 { color: #4b291c; font-size: clamp(2rem, 4vw, 3rem); margin: 0; text-align: left; }
+.menu-heading > p { font-size: .95rem; color: #705644; }
+.category-links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0 2rem; }
+.category-links a { border: 1px solid #d8b996; border-radius: 30px; padding: .65rem 1.1rem; text-decoration: none; font-size: .85rem; background: #fffaf2; color: #6c3d26; }
+.category-links a:hover { background: #4b291c; color: #fff4e2; border-color: #4b291c; }
+.bakery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+.bakery-card { min-width: 0; overflow: hidden; border-radius: 16px; border: 1px solid #e2cdb3; background: #fffdf8; scroll-margin-top: 90px; }
+.bakery-card:target { outline: 3px solid #97421f; outline-offset: 4px; }
+.bakery-photo { background: #fff; border-bottom: 1px solid #eee0ce; }
+.bakery-photo img { display: block; width: 100%; height: 210px; padding: .6rem; object-fit: contain; }
+.bakery-card-content { padding: 1.5rem; }
+.bakery-card h3 { font-size: 1.65rem; margin: 0 0 .5rem; color: #783919; }
+.bakery-card .category-note { font-size: .8rem; color: #76614e; line-height: 1.5; min-height: 2.5em; }
+.bakery-card ul { list-style: none; padding: 0; margin: 1rem 0 0; font-size: .9rem; line-height: 1.6; }
+.bakery-card li { padding: .6rem 0; border-top: 1px solid #efe3d3; }
+.fall-tag { display: inline-block; background: #f5dfbf; color: #743214; padding: .08rem .5rem; border-radius: 20px; font-size: .65rem; font-weight: bold; vertical-align: middle; }
+.menu-page .menu-holiday { display: flex; align-items: center; gap: 2rem; padding: 2.5rem; border: 1px solid #d9b890; border-radius: 18px; background: #f4e5cf; }
+.menu-holiday > div { flex: 1; }
+.menu-holiday h2 { text-align: left; color: #4b291c; font-size: 2rem; margin-bottom: 1rem; }
+.menu-holiday p { font-size: .95rem; }
+.menu-holiday .small { font-size: .8rem; margin-bottom: 0; }
+.menu-holiday .btn { flex-shrink: 0; font-size: 1rem; }
+@media (max-width: 991px) {
+  .menu-hero-inner { gap: 2rem; }
+  .bakery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-page .fall-menu-feature { grid-template-columns: 1fr; }
+  .fall-order-link { grid-column: 1; }
+  .menu-page .menu-holiday { align-items: start; flex-direction: column; }
+}
+@media (max-width: 575px) {
+  .menu-hero { padding: 2.5rem 0; }
+  .menu-hero-inner { grid-template-columns: 1fr; }
+  .hero-pastries { max-width: 320px; margin: .5rem auto 0; }
+  .menu-text-link { margin-left: .75rem; }
+  .menu-page .fall-menu-feature, .menu-page .menu-holiday { padding: 1.5rem; }
+  .fall-flavors { grid-template-columns: 1fr; gap: 1rem; }
+  .fall-flavors > div { border-top: 1px solid #896044; padding-top: 1rem; }
+  .menu-heading { display: block; }
+  .menu-heading > p { margin-top: .8rem; }
+  .bakery-grid { grid-template-columns: 1fr; }
+  .bakery-photo img { height: 220px; }
+  .menu-page main section { margin-bottom: 2.5rem; }
+}
+
