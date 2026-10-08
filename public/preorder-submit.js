@@ -41,6 +41,10 @@
       status.textContent = 'Please enter your name, email, and a 10-digit phone number.';
       return;
     }
+    if (window.location.protocol === 'file:') {
+      status.textContent = 'This local preview cannot submit orders. Please place your order on our live website or call (313) 561-5400.';
+      return;
+    }
 
     state = 'sending';
     const controls = [...form.querySelectorAll('input, select, textarea, button')];
@@ -61,10 +65,12 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      // This endpoint's 400 response happens before saving, so correcting it is safe.
-      if (response.status === 400) {
+      // These responses are returned before an order is saved, so retrying is safe.
+      if (response.status === 400 || response.status === 503) {
         state = 'idle';
-        status.textContent = 'Your order was not submitted. Please check all required details and try again.';
+        status.textContent = response.status === 400
+          ? 'Your order was not submitted. Please check all required details and try again.'
+          : 'We couldn’t save your order right now. Please try again in a moment or call (313) 561-5400.';
       } else if (!response.ok) {
         throw new Error('Order outcome unknown');
       } else {

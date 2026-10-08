@@ -2,10 +2,10 @@ import { connectDB } from "./db.js";
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  await connectDB();
-
   if (req.method === "POST") {
     try {
+      await connectDB();
+
       const { name, email, message } = req.body;
 
       if (!name || !email || !message) {
