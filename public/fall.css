@@ -8,18 +8,16 @@
 @keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 body {
   color: #39291f;
   background: #faf0df;
-  opacity: 0;
+  opacity: 1;
   animation: pageFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
 }
 body .navbar { background-color: var(--fall-brown) !important; }

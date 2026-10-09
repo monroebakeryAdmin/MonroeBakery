@@ -1,0 +1,63 @@
+/* Shared scrolling controls, loaded after page styles. */
+html,
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body > .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  flex-shrink: 0;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  animation: none;
+  transform: none;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 1020;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--fall-border, #e6c7a6);
+  border-radius: 50%;
+  background: var(--fall-brown, #4b291c);
+  color: #fff8ed;
+  box-shadow: 0 3px 12px rgba(75, 41, 28, 0.25);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top:hover {
+  background: var(--fall-rust, #97421f);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #ce8b38;
+  outline-offset: 4px;
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+}

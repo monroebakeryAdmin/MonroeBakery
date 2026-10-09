@@ -82,44 +82,15 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    /* Back to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      z-index: 999;
-      width: 45px;
-      height: 45px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 30px;
-    }
   </style>
-  <link href="fall.css?v=fall-20261008-2" rel="stylesheet" />
+  <link href="fall.css?v=20261009-1" rel="stylesheet" />
   <link href="footer.css?v=fall-20261008-2" rel="stylesheet" />
   <script src="footer.js?v=fall-20261008-2" defer></script>
+  <link href="navigation.css?v=20261009-1" rel="stylesheet" />
+  <script src="navigation.js?v=20261009-1" defer></script>
 </head>
 
 <body>
-
-<!-- Back to Top Button -->
-<button id="backToTop" class="btn btn-danger rounded-circle">↑</button>
-
-<script>
-  const btn = document.getElementById("backToTop");
-  window.onscroll = function() {
-    if (document.documentElement.scrollTop > 300) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
-  btn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-</script>
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
