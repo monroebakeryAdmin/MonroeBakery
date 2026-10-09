@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="340" viewBox="0 0 460 340" fill="none" stroke="#ffe0ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <g opacity="0.18">
+    <!-- Scored loaf -->
+    <g transform="translate(30 35) rotate(-18 55 32)">
+      <path d="M8 47C-4 18 20 3 53 3s59 15 50 44c-3 10-88 14-95 0Z"/>
+      <path d="m30 17-9 20m34-23-9 24m35-19-9 20M10 47c28 7 65 7 91-1"/>
+    </g>
+    <!-- Croissant -->
+    <g transform="translate(285 32) rotate(12 55 40)">
+      <path d="M5 63C-2 34 16 8 52 7c36-1 57 24 52 54L82 48c-12-12-39-13-54 1Z"/>
+      <path d="m22 20 6 29m14-40 2 30m21-31-4 31m24-21-3 30M5 63l23-14m76 12L82 48"/>
+    </g>
+    <!-- Wheat stalk -->
+    <g transform="translate(185 130) rotate(24 20 55)">
+      <path d="M20 110V8M20 79C-1 76-1 59 1 55c14 0 19 12 19 24Zm0-23C1 52 2 36 3 32c13 2 17 14 17 24Zm0-23C8 24 12 9 20 0c8 9 12 24 0 33Zm0 35c21-3 21-20 19-24-14 0-19 12-19 24Zm0-23c19-4 18-20 17-24-13 2-17 14-17 24Z"/>
+    </g>
+    <!-- Cookie -->
+    <g transform="translate(350 228)">
+      <circle cx="33" cy="33" r="32"/>
+      <path d="m18 15 5 3-2 5-6-2Zm24 1 5 4-3 5-6-3ZM29 34l5-3 5 5-4 5Zm-14 9 5 1-1 6-5-2Zm31 4 5-3 3 5-6 4Z"/>
+    </g>
+    <!-- Small flour and grain accents -->
+    <path d="m54 230 5-7m12 17 7-3m22-99 5 5m194 140 6 3m105-128 6-4"/>
+    <circle cx="150" cy="70" r="2"/><circle cx="278" cy="186" r="2"/><circle cx="119" cy="289" r="2"/>
+  </g>
+</svg>

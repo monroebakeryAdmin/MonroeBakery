@@ -53,24 +53,6 @@
       text-decoration: underline;
     }
 
-    /* Hero Banner */
-    .hero {
-      background: url('images/og.png') center/cover no-repeat;
-      color: white;
-      padding: 100px 0;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-
     /* Image Styling */
     .gallery-img {
       
@@ -83,17 +65,18 @@
     }
 
   </style>
-  <link href="fall.css?v=20261009-1" rel="stylesheet" />
+  <link href="fall.css?v=20261009-8" rel="stylesheet" />
   <link href="footer.css?v=fall-20261008-2" rel="stylesheet" />
   <script src="footer.js?v=fall-20261008-2" defer></script>
   <link href="navigation.css?v=20261009-1" rel="stylesheet" />
   <script src="navigation.js?v=20261009-1" defer></script>
+  <link href="gallery.css?v=20261009-1" rel="stylesheet" />
 </head>
 
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in-up">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">Monroe Bakery</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -114,16 +97,17 @@
 </nav>
 
 <!-- Hero Banner -->
-<header class="hero text-center fade-in-up">
+<header class="gallery-hero text-center fade-in-up delay-1">
   <div class="container">
+    <img class="gallery-hero-logo" src="images/Real.png" alt="Monroe Bakery logo" width="296" height="296" decoding="async">
     <h1 class="display-4 fw-bold">Our Gallery</h1>
     <p class="lead">A look at our baked goods, fresh from the oven</p>
   </div>
 </header>
 
 <!-- Gallery Section -->
-<main>
-  <section class="container my-5 fade-in-up">
+<main class="fade-in-up delay-2">
+  <section class="container my-5">
     <div class="row g-4">
       <div class="col-sm-6 col-md-4"><img src="images/twistttt.JPG" alt="Cupcake Display" class="img-fluid rounded gallery-img"></div>
       <div class="col-sm-6 col-md-4"><img src="images/front.JPG" alt="Bakery Front" class="img-fluid rounded gallery-img"></div>

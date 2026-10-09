@@ -1,0 +1,44 @@
+.gallery-hero {
+  background:
+    radial-gradient(ellipse at center, rgba(75, 41, 28, 0.8), transparent 75%),
+    url("images/bakery-pattern.svg") center / 460px 340px repeat,
+    linear-gradient(135deg, #4b291c, #97421f);
+  color: #fff;
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(75, 41, 28, 0.12);
+}
+
+.gallery-hero .container {
+  max-width: 1200px;
+}
+
+/* Compact logo above the heading; bakery illustrations frame the content. */
+.gallery-hero-logo {
+  display: block;
+  width: clamp(160px, 18vw, 210px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: #fff;
+}
+
+.gallery-hero p {
+  margin: 0.9rem auto 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 575.98px) {
+  .gallery-hero {
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+  }
+}

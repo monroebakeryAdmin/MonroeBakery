@@ -5,8 +5,9 @@ body.preorder-page {
 
 .order-hero {
   background:
-    linear-gradient(135deg, rgba(75, 41, 28, 0.94), rgba(151, 66, 31, 0.86)),
-    url("images/Real.png") center/cover no-repeat;
+    radial-gradient(ellipse at center, rgba(75, 41, 28, 0.8), transparent 75%),
+    url("images/bakery-pattern.svg") center / 460px 340px repeat,
+    linear-gradient(135deg, #4b291c, #97421f);
   color: #fff;
   padding: 4rem 0 3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -15,6 +16,17 @@ body.preorder-page {
 
 .order-hero .container {
   max-width: 1200px;
+}
+
+/* Compact logo above the heading; bakery illustrations frame the content. */
+.order-hero-logo {
+  display: block;
+  width: clamp(160px, 18vw, 210px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .order-hero .season-label {
