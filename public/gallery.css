@@ -36,6 +36,16 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Equal photo frames keep portrait and landscape images in balanced rows. */
+.gallery-grid > div > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 575.98px) {
   .gallery-hero {
     padding-top: 3rem;
