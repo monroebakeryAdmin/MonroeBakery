@@ -36,13 +36,13 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Equal photo frames keep portrait and landscape images in balanced rows. */
+/* Show every gallery photo in full at its natural proportions. */
 .gallery-grid > div > img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  aspect-ratio: auto;
+  object-fit: contain;
   object-position: center;
 }
 
