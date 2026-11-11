@@ -14,6 +14,21 @@ function escapeHtml(value = "") {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    const pickupDate = req.body?.dateNeeded;
+    const parsedPickupDate = typeof pickupDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(pickupDate)
+      ? new Date(`${pickupDate}T00:00:00Z`)
+      : null;
+    if (!parsedPickupDate || Number.isNaN(parsedPickupDate.getTime()) || parsedPickupDate.toISOString().slice(0, 10) !== pickupDate) {
+      return res.status(400).json({ message: "Please choose a valid pickup date.", orderSaved: false });
+    }
+    if (parsedPickupDate.getUTCDay() === 0) {
+      return res.status(400).json({
+        message: "We are closed on Sundays. Please choose a pickup date Monday through Saturday.",
+        code: "SUNDAY_PICKUP",
+        orderSaved: false
+      });
+    }
+
     try {
       await connectDB();
     } catch (err) {

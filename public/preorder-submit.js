@@ -7,6 +7,20 @@
   const newOrder = document.getElementById('newOrder');
   let state = 'idle';
 
+  function validatePickupDay() {
+    const isSunday = dateField.value && new Date(`${dateField.value}T00:00:00Z`).getUTCDay() === 0;
+    dateField.setCustomValidity(isSunday
+      ? 'We are closed on Sundays. Please choose a pickup date Monday through Saturday.'
+      : '');
+    return !isSunday;
+  }
+
+  dateField.addEventListener('input', validatePickupDay);
+  dateField.addEventListener('change', () => {
+    if (!validatePickupDay()) dateField.reportValidity();
+  });
+  form.addEventListener('reset', () => dateField.setCustomValidity(''));
+
   newOrder.addEventListener('click', () => {
     if (state !== 'success') return;
     state = 'idle';
@@ -19,6 +33,7 @@
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    validatePickupDay();
     if (state !== 'idle' || !form.reportValidity()) return;
     if (!Object.keys(cart).length) {
       status.textContent = 'Please add at least one item to your order.';
@@ -70,7 +85,9 @@
       if (response.status === 400 || response.status === 503) {
         state = 'idle';
         status.textContent = response.status === 400
-          ? 'Your order was not submitted. Please check all required details and try again.'
+          ? (result.code === 'SUNDAY_PICKUP'
+            ? 'We are closed on Sundays. Please choose a pickup date Monday through Saturday.'
+            : 'Your order was not submitted. Please check all required details and try again.')
           : 'We couldn’t save your order right now. Please try again in a moment or call (313) 561-5400.';
       } else if (!response.ok) {
         throw new Error('Order outcome unknown');

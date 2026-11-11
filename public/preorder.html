@@ -100,8 +100,8 @@
 
           <div class="mb-3">
             <label class="form-label" for="dateNeeded">Date Needed</label>
-            <input type="date" class="form-control" id="dateNeeded" required />
-            <small class="text-muted">Orders must be between 1–21 days from today.</small>
+            <input type="date" class="form-control" id="dateNeeded" aria-describedby="pickupDateHelp" required />
+            <small id="pickupDateHelp" class="text-muted">Choose a pickup date 1–21 days from today, Monday–Saturday. We are closed on Sundays.</small>
           </div>
 
           <div class="mb-3">
@@ -157,10 +157,6 @@ const allItems = [
   {
     group: "🥐 Pastries",
     items: [
-      { name: "Lemon Pound Cake" },
-      { name: "Berry Danish", variants: ["Strawberry", "Blueberry"] },
-      { name: "Classic Breakfast Roll" },
-      { name: "Fresh Fruit Tart" },
       { name: "Pecan Croissant" },
       { name: "Cheese Croissant" },
       { name: "Danish", variants: ["Cheese","Apple","Cherry","Blueberry"] },
@@ -168,10 +164,10 @@ const allItems = [
       { name: "Twist", variants: ["Raspberry","Apricot"] },
       { name: "Bear Claw" },
       { name: "Almond Pretzel" },
-      { name: "Pie", variants: ["Apple (Mini)","Apple (Large)","Cherry (Mini)","Cherry (Large)"] },
+      { name: "Pie", variants: ["Apple (Mini)","Apple (Large)","Cherry (Mini)","Cherry (Large)","Blueberry (Mini)","Blueberry (Large)"] },
       { name: "Strudel", variants: ["Apple (Small)","Apple (Large)","Cherry (Small)","Cherry (Large)"] },
       { name: "Turnover", variants: ["Apple","Cherry"] },
-      { name: "Indian Pie" }
+      { name: "Indian Pie", variants: ["Blueberry","Cherry","Apple"] }
     ]
   },
 
@@ -181,12 +177,11 @@ const allItems = [
       { name: "Cupcake", variants: ["Vanilla","Chocolate","Peanut","Oreo","Cherry","German Chocolate","Dubai Chocolate"] },
       { name: "Cannoli", variants: ["Peanut Sprinkle","Chocolate Sprinkle"] },
       { name: "Tiramisu Slice" },
-      { name: "Lemon Bomb Cake" },
-      { name: "Chocolate Bomb Cake" },
-      { name: "Key Lime Bomb Cake" },
+      { name: "Truffle Cake", variants: ["Lemon","Chocolate","Key Lime","Strawberry"] },
+      { name: "Tarts", variants: ["Chocolate Fudge","Lemon","Apple Caramel","Pecan"] },
+      { name: "Mousse Cake", variants: ["Lemon Raspberry","Red Velvet","Chocolate & Vanilla Pudding","Carrot"] },
       { name: "Eclair", variants: ["Small","Large"] },
       { name: "Bakery Cheesecake" },
-      { name: "Cheesecake Factory Slice" },
       { name: "Napoleon" },
       { name: "Boston Cream Pie" }
     ]
@@ -211,13 +206,12 @@ const allItems = [
       { name: "Fresh Bread", variants: ["French","Sesame","White (Square)","Poppy Seed","Potato Bread",] },
       { name: "Cinnamon Bread" },
       { name: "Egg Bread", variants: ["Plain","With Raisin"] },
-      { name: "Rye Bread", variants: ["Sourdough Rye Bread","Pumpernickel","Marble Rye","Caraway Rye","Whole Wheat","Health 7-Grain"] },
+      { name: "Rye Bread", variants: ["Sourdough Rye Bread","Pumpernickel","Marble Rye","Caraway Rye"] },
+      { name: "Whole Wheat Bread", variants: ["Whole Wheat","Health 7-Grain"] },
       { name: "Banana Bread", variants: ["Small","Medium","Large"] },
       { name: "Zucchini Bread", variants: ["Small","Medium","Large"] },
       { name: "Round Blessing Bread", variants: ["½ lb","1 lb","2 lb"] },
-      { name: "Sub Roll" },
-      { name: "Rolls", variants: ["Regular","Seed","Potato","Onion"] },
-      { name: "Butterflake Rolls" },
+      { name: "Rolls", variants: ["Regular","Sesame","Poppy Seed","Potato","Onion","Sub","Butterflake"] },
       { name: "Hot Dog Buns" }
     ]
   },
@@ -226,7 +220,7 @@ const allItems = [
     group: "🎂 Cakes",
     items: [
       { name: "Cream Cake", variants: ["Blueberry","Custard","Lemon","Chocolate Strawberry","Pistachio"] },
-      { name: "Pound Cake", variants: ["Marble","Lemon","Vanilla"] }
+      { name: "Pound Cake", variants: ["Marble","Lemon","Vanilla","Cherry","Chocolate Chip"] }
     ]
   },
 
@@ -249,7 +243,7 @@ const allItems = [
       { name: "Brownie", variants: ["Nuts","No Nuts"] },
 
       /* 🎄 ADD YOUR HOLIDAY SPECIALS */
-      { name: "Cookie Tray", variants: ["Small","Large"] },
+      { name: "Cookie Tray", variants: ["Small","Medium","Large"] },
       { name: "Cookie Tin", variants: ["Small","Large"] }
     ]
   },
@@ -278,8 +272,8 @@ const allItems = [
 
       { name: "Custard Filled Donut" },
       { name: "Raspberry Filled Donut" },
-      { name: "Long John" },
-      { name: "Long Eclair" }
+      { name: "Long John with Frosting" },
+      { name: "Long John with Custard" }
     ]
   }
 ];
@@ -432,6 +426,6 @@ dateField.min = localDateValue(tomorrow);
 dateField.max = localDateValue(maxDate);
 
 </script>
-<script src="preorder-submit.js?v=fall-20261008-4"></script>
+<script src="preorder-submit.js?v=20261110-3"></script>
 </body>
 </html>
